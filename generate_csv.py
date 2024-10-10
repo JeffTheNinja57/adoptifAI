@@ -52,10 +52,10 @@ def generate_random_examples(num_examples):
 random_examples = generate_random_examples(120)
 
 # Load the existing CSV file
-existing_data = pd.read_csv("animals_transformed.csv")
+existing_data = pd.read_csv("animals.csv")
 
 # Append the new examples to the existing data
 updated_data = pd.concat([existing_data, random_examples], ignore_index=True)
 
 # Save the updated data back to the CSV file
-updated_data.to_csv("animals_transformed.csv", index=False)
+updated_data.to_csv("animals.csv", index=False)
