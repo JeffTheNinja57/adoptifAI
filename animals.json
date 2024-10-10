@@ -1,0 +1,564 @@
+{
+  "animals": [
+    {
+      "animal_type": "dog",
+      "name": "Bella",
+      "age": "3 years",
+      "color": "black",
+      "years_in_shelter": "1 year",
+      "behavior": [
+        "friendly",
+        "energetic"
+      ],
+      "health": "excellent",
+      "vaccinated": true,
+      "target_audience": "families"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Milo",
+      "age": "2 years",
+      "color": "white",
+      "years_in_shelter": "6 months",
+      "behavior": [
+        "shy",
+        "affectionate"
+      ],
+      "health": "good",
+      "vaccinated": true,
+      "target_audience": "singles"
+    },
+    {
+      "animal_type": "dog",
+      "name": "Max",
+      "age": "5 years",
+      "color": "brown",
+      "years_in_shelter": "2 years",
+      "behavior": [
+        "protective",
+        "loyal"
+      ],
+      "health": "excellent",
+      "vaccinated": false,
+      "target_audience": "couples"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Luna",
+      "age": "1 year",
+      "color": "gray",
+      "years_in_shelter": "3 months",
+      "behavior": [
+        "playful",
+        "curious"
+      ],
+      "health": "good",
+      "vaccinated": true,
+      "target_audience": "families"
+    },
+    {
+      "animal_type": "dog",
+      "name": "Rocky",
+      "age": "4 years",
+      "color": "black",
+      "years_in_shelter": "8 months",
+      "behavior": [
+        "energetic",
+        "obedient"
+      ],
+      "health": "bad",
+      "vaccinated": false,
+      "target_audience": "active individuals"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Oliver",
+      "age": "6 years",
+      "color": "brown",
+      "years_in_shelter": "1 year",
+      "behavior": [
+        "calm",
+        "independent"
+      ],
+      "health": "excellent",
+      "vaccinated": true,
+      "target_audience": "elderly"
+    },
+    {
+      "animal_type": "dog",
+      "name": "Charlie",
+      "age": "2 years",
+      "color": "white",
+      "years_in_shelter": "5 months",
+      "behavior": [
+        "friendly",
+        "playful"
+      ],
+      "health": "good",
+      "vaccinated": true,
+      "target_audience": "families"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Simba",
+      "age": "3 years",
+      "color": "gray",
+      "years_in_shelter": "9 months",
+      "behavior": [
+        "curious",
+        "affectionate"
+      ],
+      "health": "good",
+      "vaccinated": false,
+      "target_audience": "singles"
+    },
+    {
+      "animal_type": "dog",
+      "name": "Cooper",
+      "age": "1 year",
+      "color": "brown",
+      "years_in_shelter": "2 months",
+      "behavior": [
+        "energetic",
+        "curious"
+      ],
+      "health": "excellent",
+      "vaccinated": true,
+      "target_audience": "active individuals"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Nala",
+      "age": "4 years",
+      "color": "black",
+      "years_in_shelter": "1 year",
+      "behavior": [
+        "calm",
+        "playful"
+      ],
+      "health": "bad",
+      "vaccinated": false,
+      "target_audience": "couples"
+    },
+    {
+      "animal_type": "dog",
+      "name": "Buddy",
+      "age": "7 years",
+      "color": "white",
+      "years_in_shelter": "3 years",
+      "behavior": [
+        "loyal",
+        "protective"
+      ],
+      "health": "good",
+      "vaccinated": true,
+      "target_audience": "elderly"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Chloe",
+      "age": "5 years",
+      "color": "gray",
+      "years_in_shelter": "2 years",
+      "behavior": [
+        "independent",
+        "affectionate"
+      ],
+      "health": "excellent",
+      "vaccinated": true,
+      "target_audience": "singles"
+    },
+    {
+      "animal_type": "dog",
+      "name": "Daisy",
+      "age": "3 years",
+      "color": "brown",
+      "years_in_shelter": "6 months",
+      "behavior": [
+        "playful",
+        "friendly"
+      ],
+      "health": "good",
+      "vaccinated": false,
+      "target_audience": "families"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Oscar",
+      "age": "1 year",
+      "color": "black",
+      "years_in_shelter": "4 months",
+      "behavior": [
+        "curious",
+        "shy"
+      ],
+      "health": "good",
+      "vaccinated": true,
+      "target_audience": "couples"
+    },
+    {
+      "animal_type": "dog",
+      "name": "Zeus",
+      "age": "6 years",
+      "color": "white",
+      "years_in_shelter": "1 year",
+      "behavior": [
+        "loyal",
+        "obedient"
+      ],
+      "health": "bad",
+      "vaccinated": false,
+      "target_audience": "elderly"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Loki",
+      "age": "2 years",
+      "color": "brown",
+      "years_in_shelter": "7 months",
+      "behavior": [
+        "affectionate",
+        "playful"
+      ],
+      "health": "excellent",
+      "vaccinated": true,
+      "target_audience": "singles"
+    },
+    {
+      "animal_type": "dog",
+      "name": "Rex",
+      "age": "4 years",
+      "color": "gray",
+      "years_in_shelter": "9 months",
+      "behavior": [
+        "protective",
+        "energetic"
+      ],
+      "health": "good",
+      "vaccinated": true,
+      "target_audience": "couples"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Jasper",
+      "age": "3 years",
+      "color": "black",
+      "years_in_shelter": "1 year",
+      "behavior": [
+        "shy",
+        "independent"
+      ],
+      "health": "bad",
+      "vaccinated": false,
+      "target_audience": "elderly"
+    },
+    {
+      "animal_type": "dog",
+      "name": "Riley",
+      "age": "5 years",
+      "color": "white",
+      "years_in_shelter": "2 years",
+      "behavior": [
+        "friendly",
+        "obedient"
+      ],
+      "health": "excellent",
+      "vaccinated": true,
+      "target_audience": "families"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Whiskers",
+      "age": "7 years",
+      "color": "gray",
+      "years_in_shelter": "3 years",
+      "behavior": [
+        "calm",
+        "affectionate"
+      ],
+      "health": "good",
+      "vaccinated": true,
+      "target_audience": "elderly"
+    },
+    {
+      "animal_type": "dog",
+      "name": "Molly",
+      "age": "4 years",
+      "color": "brown",
+      "years_in_shelter": "1 year",
+      "behavior": [
+        "friendly",
+        "loyal"
+      ],
+      "health": "good",
+      "vaccinated": true,
+      "target_audience": "families"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Leo",
+      "age": "2 years",
+      "color": "white",
+      "years_in_shelter": "5 months",
+      "behavior": [
+        "playful",
+        "curious"
+      ],
+      "health": "excellent",
+      "vaccinated": true,
+      "target_audience": "singles"
+    },
+    {
+      "animal_type": "dog",
+      "name": "Rover",
+      "age": "3 years",
+      "color": "gray",
+      "years_in_shelter": "7 months",
+      "behavior": [
+        "obedient",
+        "energetic"
+      ],
+      "health": "excellent",
+      "vaccinated": false,
+      "target_audience": "active individuals"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Tiger",
+      "age": "5 years",
+      "color": "black",
+      "years_in_shelter": "1 year",
+      "behavior": [
+        "shy",
+        "independent"
+      ],
+      "health": "good",
+      "vaccinated": true,
+      "target_audience": "elderly"
+    },
+    {
+      "animal_type": "dog",
+      "name": "Buster",
+      "age": "6 years",
+      "color": "white",
+      "years_in_shelter": "2 years",
+      "behavior": [
+        "loyal",
+        "protective"
+      ],
+      "health": "bad",
+      "vaccinated": false,
+      "target_audience": "couples"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Shadow",
+      "age": "1 year",
+      "color": "gray",
+      "years_in_shelter": "4 months",
+      "behavior": [
+        "playful",
+        "affectionate"
+      ],
+      "health": "excellent",
+      "vaccinated": true,
+      "target_audience": "families"
+    },
+    {
+      "animal_type": "dog",
+      "name": "Rex",
+      "age": "8 years",
+      "color": "black",
+      "years_in_shelter": "3 years",
+      "behavior": [
+        "calm",
+        "loyal"
+      ],
+      "health": "good",
+      "vaccinated": true,
+      "target_audience": "elderly"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Sasha",
+      "age": "3 years",
+      "color": "brown",
+      "years_in_shelter": "6 months",
+      "behavior": [
+        "curious",
+        "independent"
+      ],
+      "health": "good",
+      "vaccinated": false,
+      "target_audience": "singles"
+    },
+    {
+      "animal_type": "dog",
+      "name": "Duke",
+      "age": "2 years",
+      "color": "white",
+      "years_in_shelter": "8 months",
+      "behavior": [
+        "energetic",
+        "playful"
+      ],
+      "health": "excellent",
+      "vaccinated": true,
+      "target_audience": "active individuals"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Ginger",
+      "age": "4 years",
+      "color": "gray",
+      "years_in_shelter": "1 year",
+      "behavior": [
+        "shy",
+        "affectionate"
+      ],
+      "health": "bad",
+      "vaccinated": true,
+      "target_audience": "couples"
+    },
+    {
+      "animal_type": "dog",
+      "name": "Zara",
+      "age": "5 years",
+      "color": "brown",
+      "years_in_shelter": "1 year",
+      "behavior": [
+        "loyal",
+        "protective"
+      ],
+      "health": "excellent",
+      "vaccinated": true,
+      "target_audience": "families"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Coco",
+      "age": "2 years",
+      "color": "black",
+      "years_in_shelter": "3 months",
+      "behavior": [
+        "affectionate",
+        "playful"
+      ],
+      "health": "good",
+      "vaccinated": true,
+      "target_audience": "singles"
+    },
+    {
+      "animal_type": "dog",
+      "name": "Finn",
+      "age": "7 years",
+      "color": "white",
+      "years_in_shelter": "2 years",
+      "behavior": [
+        "calm",
+        "obedient"
+      ],
+      "health": "excellent",
+      "vaccinated": false,
+      "target_audience": "elderly"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Dusty",
+      "age": "6 years",
+      "color": "gray",
+      "years_in_shelter": "4 years",
+      "behavior": [
+        "independent",
+        "calm"
+      ],
+      "health": "bad",
+      "vaccinated": true,
+      "target_audience": "elderly"
+    },
+    {
+      "animal_type": "dog",
+      "name": "Harley",
+      "age": "3 years",
+      "color": "brown",
+      "years_in_shelter": "6 months",
+      "behavior": [
+        "friendly",
+        "energetic"
+      ],
+      "health": "good",
+      "vaccinated": true,
+      "target_audience": "families"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Penny",
+      "age": "5 years",
+      "color": "white",
+      "years_in_shelter": "8 months",
+      "behavior": [
+        "playful",
+        "affectionate"
+      ],
+      "health": "good",
+      "vaccinated": false,
+      "target_audience": "couples"
+    },
+    {
+      "animal_type": "dog",
+      "name": "Oscar",
+      "age": "1 year",
+      "color": "black",
+      "years_in_shelter": "3 months",
+      "behavior": [
+        "energetic",
+        "curious"
+      ],
+      "health": "excellent",
+      "vaccinated": true,
+      "target_audience": "active individuals"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Misty",
+      "age": "4 years",
+      "color": "gray",
+      "years_in_shelter": "1 year",
+      "behavior": [
+        "independent",
+        "shy"
+      ],
+      "health": "good",
+      "vaccinated": true,
+      "target_audience": "singles"
+    },
+    {
+      "animal_type": "dog",
+      "name": "Bruno",
+      "age": "6 years",
+      "color": "brown",
+      "years_in_shelter": "2 years",
+      "behavior": [
+        "loyal",
+        "protective"
+      ],
+      "health": "bad",
+      "vaccinated": false,
+      "target_audience": "elderly"
+    },
+    {
+      "animal_type": "cat",
+      "name": "Snowball",
+      "age": "2 years",
+      "color": "white",
+      "years_in_shelter": "5 months",
+      "behavior": [
+        "playful",
+        "affectionate"
+      ],
+      "health": "excellent",
+      "vaccinated": true,
+      "target_audience": "families"
+    }
+  ]
+}
