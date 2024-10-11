@@ -36,4 +36,4 @@ def transform_age(csv_input_path, csv_output_path):
 
 
 # Usage
-transform_age('animals.csv', 'animals.csv')
+transform_age('../animals.csv', 'animals.csv')
