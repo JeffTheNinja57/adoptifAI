@@ -35,7 +35,7 @@ def generate_descriptions(input_csv, output_csv):
                 ),
                 contents=f"Write an engaging, informative description for a {animal_info['animal_type']} named {animal_info['name']}. It is {animal_info['age']} years old, {animal_info['color']}, and has been in the shelter for {animal_info['months_in_shelter']} months. Its behavior is {animal_info['behavior']}, its health is {animal_info['health']}, and it is vaccinated: {animal_info['vaccinated']}. Target audience: {animal_info['target_audience']}.",
             )
-            response = response.text
+            # response = response.text
             animal_info['description'] = response
             writer.writerow(animal_info)
             print(f"Generated description for {animal_info['name']}.")

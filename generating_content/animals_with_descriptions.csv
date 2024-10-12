@@ -1,2 +1,10 @@
 animal_type,name,age,color,months_in_shelter,behavior,health,vaccinated,target_audience,description
-dog,Bella,3,black,12,"friendly, energetic",excellent,True,families,"Bella is a beautiful 3-year-old black dog with a heart of gold! She's been waiting patiently for her forever home for a year now, and she's ready to shower her new family with love and energy. Bella is incredibly friendly, loves to play fetch and go for walks, and would make a wonderful companion for an active family. She's in excellent health, is fully vaccinated, and has been patiently waiting for a family to call her own.  Could Bella be the perfect addition to your home?"
+dog,Bella,3,black,12,"friendly, energetic",excellent,True,families,Description could not be generated.
+cat,Milo,2,white,6,"shy, affectionate",good,True,singles,Description could not be generated.
+dog,Max,5,brown,24,"protective, loyal",excellent,False,couples,Description could not be generated.
+cat,Luna,1,gray,3,"playful, curious",good,True,families,Description could not be generated.
+dog,Rocky,4,black,8,"energetic, obedient",bad,False,active individuals,Description could not be generated.
+cat,Oliver,6,brown,12,"calm, independent",excellent,True,elderly,Description could not be generated.
+dog,Charlie,2,white,5,"friendly, playful",good,True,families,Description could not be generated.
+cat,Simba,3,gray,9,"curious, affectionate",good,False,singles,Description could not be generated.
+dog,Cooper,1,brown,2,"energetic, curious",excellent,True,active individuals,Description could not be generated.
