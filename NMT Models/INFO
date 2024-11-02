@@ -1,1 +1,2 @@
-
+There have been problems with the OpenNMT NMT model. Firstly, when I tried running it locally my output was repeated <unk> characters. I ran it with increased parameters on GPU4EDU, yet the issue persists.
+Trying to resolve it while looking at how to fine-tune a HuggingFace model in the meantime, in case the first option does not work. 
