@@ -1,0 +1,9 @@
+animal_type,name,age,color,months_in_shelter,behavior,health,vaccinated,target_audience,row_num,description
+dog,Bella,3,black,12,"friendly, energetic",excellent,True,families,1,Description could not be generated.
+dog,Max,5,brown,24,"protective, loyal",excellent,False,couples,2,Description could not be generated.
+cat,Luna,1,gray,3,"playful, curious",good,True,families,3,Description could not be generated.
+dog,Rocky,4,black,8,"energetic, obedient",bad,False,active individuals,4,Description could not be generated.
+cat,Oliver,6,brown,12,"calm, independent",excellent,True,elderly,5,Description could not be generated.
+dog,Charlie,2,white,5,"friendly, playful",good,True,families,6,Description could not be generated.
+cat,Simba,3,gray,9,"curious, affectionate",good,False,singles,7,Description could not be generated.
+dog,Cooper,1,brown,2,"energetic, curious",excellent,True,active individuals,8,Description could not be generated.
