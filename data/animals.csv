@@ -1,6 +1,5 @@
 animal_type,name,age,color,months_in_shelter,behavior,health,vaccinated,target_audience
 dog,Bella,3,black,12,"friendly, energetic",excellent,True,families
-cat,Milo,2,white,6,"shy, affectionate",good,True,singles
 dog,Max,5,brown,24,"protective, loyal",excellent,False,couples
 cat,Luna,1,gray,3,"playful, curious",good,True,families
 dog,Rocky,4,black,8,"energetic, obedient",bad,False,active individuals
@@ -199,3 +198,196 @@ cat,Simba,2,brown,5,friendly,bad,False,active individuals
 dog,Buddy,15,brown,36,"protective, affectionate, calm",good,False,families
 cat,Bella,2,white,7,"playful, protective",good,False,couples
 cat,Dusty,2,brown,21,"obedient, curious",good,True,active individuals
+cat,Moss,12,black,44,"quiet, active, energetic",good,True,families
+cat,Amber,8,gray,53,"trainable, confident",bad,True,active individuals
+cat,Moss,15,black,57,mellow,good,True,singles
+cat,Oscar,6,gray,18,alert,good,True,singles
+dog,Nala,14,white,29,"sociable, friendly",bad,True,elderly
+cat,Kitty,2,brown,12,"mellow, adventurous, calm",good,True,elderly
+dog,Pickles,7,white,27,"calm, affectionate",excellent,True,singles
+cat,Shadow,4,white,33,people-oriented,excellent,True,active individuals
+cat,Sky,1,black,6,"quick learner, patient, relaxed",good,False,families
+dog,Rocky,13,black,54,"loyal, quick learner",excellent,True,active individuals
+cat,Coco,6,brown,30,"energetic, sociable",excellent,True,families
+cat,Chester,4,gray,39,"sociable, enthusiastic, focused",excellent,True,active individuals
+cat,Queen,3,black,5,"quiet, loyal",good,True,families
+dog,Atlas,8,brown,28,"relaxed, people-oriented",excellent,True,families
+cat,Chloe,2,brown,6,"athletic, good with other pets, dignified",bad,True,singles
+cat,Ash,11,white,41,"good with other pets, obedient, playful",excellent,True,couples
+dog,Forest,12,brown,23,cuddly,excellent,True,couples
+cat,Duke,14,brown,18,dignified,excellent,True,active individuals
+cat,Sushi,5,white,60,"playful, outgoing",excellent,True,elderly
+dog,Zeus,9,black,46,"enthusiastic, good with kids, loving",excellent,True,active individuals
+cat,Storm,11,gray,39,"intelligent, responsive, laid-back",excellent,True,active individuals
+dog,Coco,4,gray,39,"devoted, curious",excellent,True,singles
+cat,Ash,1,white,4,"food-motivated, athletic",bad,True,singles
+cat,Chester,3,white,22,"loyal, lap cat/dog, enthusiastic",bad,True,active individuals
+cat,Coco,7,brown,31,"affectionate, friendly, lap cat/dog",excellent,True,active individuals
+cat,Pixie,9,black,38,"independent, athletic, protective",good,True,families
+cat,Bella,13,black,47,"quick learner, quiet, cautious",bad,True,active individuals
+cat,Oreo,1,white,12,"laid-back, adventurous, focused",excellent,True,couples
+cat,Mittens,12,gray,24,"intelligent, quiet",excellent,True,families
+dog,Brook,15,black,58,active,excellent,True,elderly
+dog,Archie,9,black,2,"quiet, alert",excellent,True,active individuals
+cat,Bella,5,brown,7,"food-motivated, quick learner, affectionate",good,True,active individuals
+cat,Binx,10,white,26,"loving, outgoing, focused",excellent,True,families
+cat,Felix,12,gray,50,focused,excellent,True,active individuals
+dog,Ziggy,13,black,41,"quick learner, calm, quiet",excellent,True,elderly
+cat,Oreo,13,white,20,"curious, energetic, alert",bad,True,elderly
+dog,Axel,11,black,42,"intelligent, curious",good,True,singles
+dog,Molly,15,white,49,"good with other pets, energetic",good,False,couples
+dog,Pretzel,13,brown,19,"patient, good with other pets",good,True,families
+cat,Snowball,15,white,16,curious,bad,True,singles
+cat,Ziggy,1,gray,6,"cautious, alert, sociable",good,True,families
+cat,Amber,15,white,57,"confident, trainable",good,True,families
+cat,Mochi,3,white,5,good with kids,excellent,True,elderly
+cat,Baron,7,black,48,alert,good,True,singles
+cat,Kitty,9,white,14,"adventurous, independent, playful",good,True,active individuals
+dog,Archie,1,black,8,"outgoing, loyal",good,True,singles
+cat,Pepper,3,black,35,"trainable, talkative",excellent,True,couples
+cat,Auburn,14,white,21,active,bad,True,families
+cat,Simba,3,gray,36,active,good,True,active individuals
+dog,Zara,12,black,52,"devoted, dignified, good with other pets",excellent,True,couples
+dog,Finn,12,gray,23,intelligent,excellent,True,active individuals
+cat,Whiskers,9,brown,25,"good with other pets, focused, affectionate",excellent,True,families
+dog,Storm,14,black,18,lap cat/dog,excellent,True,elderly
+cat,Coco,14,black,37,"playful, shy, curious",bad,True,couples
+cat,Pickle,2,black,15,"curious, shy",excellent,True,active individuals
+dog,Charlie,10,brown,19,mellow,excellent,True,elderly
+dog,Lucy,3,gray,34,"people-oriented, mellow, trainable",excellent,True,couples
+dog,Oreo,14,black,57,loyal,bad,True,families
+dog,Rex,5,brown,15,active,good,True,singles
+cat,Chester,14,gray,49,"loving, confident",excellent,True,families
+dog,Charlie,8,black,28,"cuddly, relaxed, focused",bad,True,couples
+cat,Cloud,10,brown,19,"intelligent, good with kids",excellent,True,active individuals
+cat,Scout,11,black,49,"cautious, energetic, mellow",excellent,True,elderly
+dog,Zeus,1,black,5,"confident, outgoing",excellent,True,singles
+cat,Pepper,15,white,42,"gentle, lap cat/dog, confident",good,False,singles
+cat,Loki,3,gray,36,"good with other pets, alert, talkative",good,True,couples
+cat,Rain,2,gray,16,"confident, loyal, adventurous",excellent,True,elderly
+cat,Queen,15,black,26,energetic,excellent,True,elderly
+cat,Kitty,13,gray,30,"quiet, mellow, sociable",good,True,singles
+dog,Scout,8,brown,40,energetic,excellent,True,couples
+dog,Pip,11,black,36,"loving, friendly",good,True,families
+cat,Dusty,1,brown,1,gentle,bad,True,elderly
+cat,Bella,12,white,58,affectionate,bad,True,couples
+cat,Duchess,15,brown,18,"talkative, trainable, mellow",excellent,True,elderly
+dog,Archie,9,white,38,relaxed,good,True,elderly
+cat,Binx,6,gray,2,"calm, quick learner",good,True,families
+dog,Forest,2,white,24,"loyal, relaxed, quiet",excellent,True,singles
+cat,Oliver,10,white,49,"lap cat/dog, alert",excellent,True,families
+dog,Rocky,13,black,24,"obedient, friendly, cuddly",excellent,True,active individuals
+cat,Queen,11,black,25,"sociable, alert",good,False,families
+cat,Milo,15,gray,42,relaxed,excellent,True,couples
+cat,Prince,12,brown,19,cautious,good,True,families
+cat,Pixie,7,brown,15,"cautious, calm",excellent,True,active individuals
+cat,Simba,8,black,12,"confident, sociable, quiet",good,True,elderly
+cat,Pine,12,gray,35,"calm, patient",good,False,families
+dog,Daisy,7,black,4,"active, alert",bad,True,elderly
+cat,Mittens,6,white,20,"alert, enthusiastic, quiet",good,True,active individuals
+cat,Taco,6,brown,32,"playful, confident",excellent,True,elderly
+dog,Rover,2,brown,1,"gentle, adventurous, enthusiastic",excellent,True,singles
+dog,Nacho,9,brown,56,"talkative, trainable",good,True,families
+cat,Loki,7,brown,59,"energetic, mellow",excellent,True,active individuals
+dog,Winston,12,white,32,trainable,good,True,singles
+dog,Bear,11,white,48,"quick learner, curious, good with other pets",good,True,families
+dog,Wolf,9,brown,23,"patient, quiet, dignified",excellent,True,active individuals
+dog,Sophie,3,brown,32,"quick learner, mellow, energetic",good,True,singles
+cat,Sasha,5,black,58,"obedient, independent, relaxed",excellent,True,families
+dog,Banjo,10,gray,27,"quick learner, relaxed",excellent,True,active individuals
+cat,Princess,10,black,29,"alert, people-oriented, playful",good,True,couples
+dog,Pretzel,7,black,22,"people-oriented, confident",excellent,True,active individuals
+cat,Bella,2,brown,2,"energetic, devoted",good,False,singles
+cat,Shadow,5,brown,60,patient,excellent,True,families
+cat,Misty,6,black,23,independent,good,True,singles
+dog,Ruby,13,white,18,"outgoing, protective",good,True,couples
+dog,Pixie,4,black,42,"relaxed, responsive",bad,True,elderly
+cat,Princess,15,brown,52,"quick learner, loyal",good,True,singles
+cat,Amber,13,white,56,"responsive, good with other pets, laid-back",bad,True,elderly
+dog,Buster,4,white,8,cautious,good,True,active individuals
+dog,Max,3,black,13,quick learner,bad,True,active individuals
+cat,Sage,9,brown,51,"independent, outgoing, gentle",good,False,singles
+dog,Teddy,8,gray,18,"good with other pets, affectionate",bad,False,singles
+dog,Duke,5,white,11,"quiet, loving, active",good,True,active individuals
+cat,Binx,4,brown,4,shy,excellent,True,elderly
+cat,Shadow,9,gray,15,"intelligent, good with other pets",excellent,True,active individuals
+cat,Sasha,6,brown,13,"responsive, active",good,True,elderly
+dog,Coco,13,gray,28,"loyal, curious",excellent,True,couples
+dog,Bear,12,brown,46,cuddly,excellent,True,singles
+cat,Sage,9,gray,46,"responsive, outgoing, gentle",excellent,True,active individuals
+dog,Storm,5,brown,21,"devoted, mellow, active",excellent,True,active individuals
+cat,Ash,9,gray,46,"trainable, dignified",excellent,True,elderly
+dog,Pip,7,white,25,"responsive, talkative, relaxed",excellent,True,active individuals
+dog,Dawn,15,white,41,"good with kids, obedient, gentle",good,True,active individuals
+dog,Cooper,14,gray,47,"good with other pets, cautious, patient",good,True,families
+cat,Forest,15,gray,31,"enthusiastic, cautious, alert",excellent,True,singles
+dog,Roxy,3,white,8,"curious, responsive",bad,True,couples
+dog,Finn,4,black,34,"food-motivated, good with other pets, affectionate",bad,False,elderly
+cat,Midnight,15,gray,31,"athletic, outgoing, people-oriented",excellent,True,couples
+dog,Ruby,3,brown,17,sociable,excellent,True,singles
+cat,Patches,9,black,36,"outgoing, curious",excellent,True,active individuals
+dog,Teddy,3,brown,7,"intelligent, responsive",excellent,True,families
+dog,Murphy,3,gray,32,"enthusiastic, affectionate, active",excellent,True,elderly
+dog,Pretzel,13,black,40,"mellow, focused, curious",excellent,True,families
+dog,Lucy,13,white,53,"loving, quiet, loyal",bad,True,active individuals
+cat,Willow,6,black,48,"active, calm, people-oriented",excellent,True,couples
+dog,Oscar,3,gray,12,"sociable, people-oriented, obedient",excellent,True,couples
+dog,Jax,2,gray,20,gentle,excellent,True,families
+cat,Lady,4,gray,7,"cuddly, good with other pets",good,True,families
+dog,Rocky,14,brown,29,"adventurous, gentle",excellent,True,active individuals
+cat,Kitty,2,brown,23,"curious, obedient, confident",good,True,couples
+cat,Felix,9,white,7,energetic,bad,True,singles
+dog,Nugget,9,gray,47,"food-motivated, confident",good,True,singles
+cat,Chloe,6,gray,47,independent,excellent,True,families
+cat,Taco,11,gray,16,lap cat/dog,excellent,True,elderly
+dog,Waffles,8,black,41,"focused, gentle, adventurous",good,True,couples
+cat,Ziggy,15,black,18,talkative,excellent,True,families
+cat,Shadow,1,gray,11,friendly,bad,True,couples
+cat,Oliver,6,brown,8,"cuddly, calm",bad,True,elderly
+dog,Maddie,2,black,21,"athletic, good with other pets, relaxed",bad,True,couples
+cat,Cloud,14,gray,24,people-oriented,excellent,True,families
+cat,Shadow,9,white,20,"curious, energetic",excellent,True,families
+dog,Oscar,11,gray,32,"talkative, obedient, playful",good,True,active individuals
+cat,Forest,1,black,7,"confident, enthusiastic",excellent,True,couples
+cat,Bella,1,brown,7,"friendly, loving",good,True,active individuals
+cat,Snowball,9,black,46,"devoted, responsive, gentle",good,True,active individuals
+dog,Zeus,13,black,49,"cautious, quiet, calm",good,False,active individuals
+cat,Ziggy,6,brown,48,"calm, independent, trainable",excellent,True,singles
+dog,Nugget,11,white,17,relaxed,good,True,elderly
+dog,Coco,10,brown,16,good with kids,excellent,True,families
+dog,Ruby,2,gray,5,"trainable, talkative, energetic",excellent,True,singles
+cat,Princess,5,white,46,"playful, enthusiastic",excellent,True,singles
+dog,Ruby,10,black,50,"active, dignified, laid-back",excellent,True,singles
+dog,Sky,2,brown,17,"outgoing, cautious, people-oriented",excellent,True,singles
+dog,Sunny,11,white,45,"loyal, calm",excellent,True,singles
+cat,Oscar,15,gray,24,confident,good,True,elderly
+cat,Felix,10,gray,20,"gentle, good with other pets",excellent,True,families
+cat,Oliver,13,black,32,"outgoing, patient",excellent,True,families
+cat,Cookie,3,brown,13,relaxed,excellent,True,couples
+dog,Buddy,14,black,23,"shy, athletic, dignified",excellent,True,active individuals
+dog,Pepper,13,white,19,"good with kids, devoted",good,False,families
+dog,Brook,4,white,13,"loving, athletic",excellent,True,families
+cat,Rain,14,white,30,"sociable, protective, friendly",bad,True,couples
+dog,Charlie,12,black,23,adventurous,bad,False,elderly
+cat,Pine,13,white,17,"obedient, friendly, shy",excellent,True,families
+cat,Patches,11,brown,53,enthusiastic,excellent,True,elderly
+dog,Winston,12,brown,29,"independent, mellow",excellent,True,active individuals
+cat,Prince,9,black,24,"calm, good with kids",good,True,couples
+cat,Nala,5,white,38,"mellow, intelligent",good,True,families
+dog,Atlas,7,gray,37,laid-back,good,True,singles
+dog,Oscar,7,white,41,"intelligent, people-oriented, good with kids",good,True,couples
+dog,Storm,12,black,32,active,excellent,True,elderly
+cat,Leo,8,white,5,"shy, intelligent",bad,False,elderly
+dog,Bear,11,brown,18,"mellow, calm, loving",excellent,True,couples
+cat,Maple,3,brown,20,"food-motivated, responsive",excellent,True,families
+dog,Buster,10,white,24,confident,bad,True,active individuals
+cat,Dusty,4,brown,20,"loyal, outgoing, cautious",excellent,True,elderly
+dog,Riley,3,white,21,"loving, protective, good with other pets",excellent,True,active individuals
+dog,Summer,1,black,2,"outgoing, good with other pets, athletic",excellent,True,families
+dog,Scout,6,brown,8,enthusiastic,excellent,True,couples
+cat,Misty,3,black,20,lap cat/dog,excellent,True,families
+dog,Molly,9,brown,48,"patient, good with kids",excellent,True,families
+cat,Sushi,7,gray,6,"friendly, food-motivated, playful",good,True,couples
+dog,Blade,9,black,8,"independent, friendly",bad,True,families
+cat,Willow,15,gray,46,"dignified, good with other pets, quiet",excellent,True,singles
+dog,Roxy,7,white,8,sociable,good,False,elderly

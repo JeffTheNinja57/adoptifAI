@@ -1,1 +1,101 @@
-[{"animal_type":"dog","name":"Bella","age":3,"color":"black","months_in_shelter":12,"behavior":"friendly, energetic","health":"excellent","vaccinated":true,"target_audience":"families"},{"animal_type":"cat","name":"Milo","age":2,"color":"white","months_in_shelter":6,"behavior":"shy, affectionate","health":"good","vaccinated":true,"target_audience":"singles"},{"animal_type":"dog","name":"Max","age":5,"color":"brown","months_in_shelter":24,"behavior":"protective, loyal","health":"excellent","vaccinated":false,"target_audience":"couples"},{"animal_type":"cat","name":"Luna","age":1,"color":"gray","months_in_shelter":3,"behavior":"playful, curious","health":"good","vaccinated":true,"target_audience":"families"},{"animal_type":"dog","name":"Rocky","age":4,"color":"black","months_in_shelter":8,"behavior":"energetic, obedient","health":"bad","vaccinated":false,"target_audience":"active individuals"},{"animal_type":"cat","name":"Oliver","age":6,"color":"brown","months_in_shelter":12,"behavior":"calm, independent","health":"excellent","vaccinated":true,"target_audience":"elderly"},{"animal_type":"dog","name":"Charlie","age":2,"color":"white","months_in_shelter":5,"behavior":"friendly, playful","health":"good","vaccinated":true,"target_audience":"families"},{"animal_type":"cat","name":"Simba","age":3,"color":"gray","months_in_shelter":9,"behavior":"curious, affectionate","health":"good","vaccinated":false,"target_audience":"singles"},{"animal_type":"dog","name":"Cooper","age":1,"color":"brown","months_in_shelter":2,"behavior":"energetic, curious","health":"excellent","vaccinated":true,"target_audience":"active individuals"}]
+[
+  {
+    "animal_type": "dog",
+    "name": "Bella",
+    "age": 3,
+    "color": "black",
+    "months_in_shelter": 12,
+    "behavior": "friendly, energetic",
+    "health": "excellent",
+    "vaccinated": true,
+    "target_audience": "families"
+  },
+  {
+    "animal_type": "cat",
+    "name": "Milo",
+    "age": 2,
+    "color": "white",
+    "months_in_shelter": 6,
+    "behavior": "shy, affectionate",
+    "health": "good",
+    "vaccinated": true,
+    "target_audience": "singles"
+  },
+  {
+    "animal_type": "dog",
+    "name": "Max",
+    "age": 5,
+    "color": "brown",
+    "months_in_shelter": 24,
+    "behavior": "protective, loyal",
+    "health": "excellent",
+    "vaccinated": false,
+    "target_audience": "couples"
+  },
+  {
+    "animal_type": "cat",
+    "name": "Luna",
+    "age": 1,
+    "color": "gray",
+    "months_in_shelter": 3,
+    "behavior": "playful, curious",
+    "health": "good",
+    "vaccinated": true,
+    "target_audience": "families"
+  },
+  {
+    "animal_type": "dog",
+    "name": "Rocky",
+    "age": 4,
+    "color": "black",
+    "months_in_shelter": 8,
+    "behavior": "energetic, obedient",
+    "health": "bad",
+    "vaccinated": false,
+    "target_audience": "active individuals"
+  },
+  {
+    "animal_type": "cat",
+    "name": "Oliver",
+    "age": 6,
+    "color": "brown",
+    "months_in_shelter": 12,
+    "behavior": "calm, independent",
+    "health": "excellent",
+    "vaccinated": true,
+    "target_audience": "elderly"
+  },
+  {
+    "animal_type": "dog",
+    "name": "Charlie",
+    "age": 2,
+    "color": "white",
+    "months_in_shelter": 5,
+    "behavior": "friendly, playful",
+    "health": "good",
+    "vaccinated": true,
+    "target_audience": "families"
+  },
+  {
+    "animal_type": "cat",
+    "name": "Simba",
+    "age": 3,
+    "color": "gray",
+    "months_in_shelter": 9,
+    "behavior": "curious, affectionate",
+    "health": "good",
+    "vaccinated": false,
+    "target_audience": "singles"
+  },
+  {
+    "animal_type": "dog",
+    "name": "Cooper",
+    "age": 1,
+    "color": "brown",
+    "months_in_shelter": 2,
+    "behavior": "energetic, curious",
+    "health": "excellent",
+    "vaccinated": true,
+    "target_audience": "active individuals"
+  }
+]
