@@ -1,5 +1,4 @@
 # AdoptifAI - Animal Description Generator
-*Waves hands excitedly*
 
 ## Project Overview
 This project automates the generation of engaging animal shelter descriptions using Google's Gemini AI. Let me walk you through it!
@@ -18,7 +17,6 @@ adoptifAI/
 ```
 
 ## Setup
-*Adjusts bow tie*
 
 1. **Prerequisites**
 ```bash
