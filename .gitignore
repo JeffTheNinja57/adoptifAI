@@ -2,7 +2,7 @@
 *.iml
 out
 gen
-#*.txt
+*.txt
 petfinder*
 logs
 .gitignore

@@ -74,7 +74,7 @@ class TestDescriptionGeneration(unittest.TestCase):
                 generate_animal_descriptions_batch(empty_batch)
 
     def test_long_description_handling(self):
-        """Test 5: Verify handling of long input data"""
+        """Test 5: Verify handling of long input full_data"""
         long_behavior = "Extremely " + "very " * 50 + "friendly"
         test_animal = {**self.test_animal, 'behavior': long_behavior}
 

@@ -94,15 +94,15 @@ def process_animals_in_batches(input_csv_file, batch_size=5, parse_start=None, p
 
 if __name__ == "__main__":
     input_csv_file = "../../data/animals.csv"
-    batch_size = 20
+    batch_size = 25
 
     # Define processing range
-    parse_start = 1  # Start from first animal (optional, default is start of file)
-    parse_end = 50  # Stop after 50th animal (optional, default is end of file)
+    parse_start = 51  # Start from first animal (optional, default is start of file)
+    # parse_end = 50  # Stop after 50th animal (optional, default is end of file)
 
     process_animals_in_batches(
         input_csv_file=input_csv_file,
         batch_size=batch_size,
         parse_start=parse_start,
-        parse_end=parse_end
+        # parse_end=parse_end
     )
