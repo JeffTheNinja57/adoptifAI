@@ -102,7 +102,7 @@ class AnimalDescriptionGenerator:
             raise
 
     def save_description(self, description: str, animal_data: Dict[str, str],
-                         output_dir: str = "../data/descriptions") -> str:
+                         output_dir: str = "../full_data/descriptions") -> str:
         """Save a single description to a file."""
         try:
             os.makedirs(output_dir, exist_ok=True)

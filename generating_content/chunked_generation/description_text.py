@@ -1,7 +1,7 @@
 import os
 
 
-def save_batch_descriptions(descriptions, batch_number, output_dir="../data/descriptions"):
+def save_batch_descriptions(descriptions, batch_number, output_dir="../full_data/descriptions"):
     # Create output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
 
