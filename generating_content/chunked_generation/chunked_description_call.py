@@ -100,8 +100,8 @@ def process_animals_in_batches(input_csv_file, output_csv_file, batch_size=5, st
 
 
 if __name__ == "__main__":
-    input_csv_file = "../data/test_animal_data.csv"
-    output_csv_file = "../data/test_animal_data_with_descriptions.csv"
+    input_csv_file = "../../data/test_animal_data.csv"
+    output_csv_file = "../../data/test_animal_data_with_descriptions.csv"
 
     batch_size = 5  # Process 5 animals at a time
 

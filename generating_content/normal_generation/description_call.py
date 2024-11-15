@@ -35,8 +35,8 @@ def process_animals(input_csv_file, output_csv_file, start_row=None, end_row=Non
 
 
 if __name__ == "__main__":
-    input_csv_file = "../data/animals.csv"
-    output_csv_file = "../data/animals_with_descriptions.csv"
+    input_csv_file = "../../data/animals.csv"
+    output_csv_file = "../../data/animals_with_descriptions.csv"
 
     start_row = None
     end_row = None

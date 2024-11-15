@@ -6,7 +6,7 @@ import google.generativeai as genai
 try:
     GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
 except KeyError:
-    with open(os.path.abspath("../gemini_key.txt"), "r") as file:
+    with open(os.path.abspath("../../gemini_key.txt"), "r") as file:
         GEMINI_API_KEY = file.read().strip()
 
 genai.configure(api_key=GEMINI_API_KEY)
@@ -42,7 +42,7 @@ def generate_descriptions(input_csv, output_csv):
     print(f"Descriptions generated and saved to '{output_csv}'.")
 
 
-input_csv_file = "../data/test_animal_data.csv"
+input_csv_file = "../../data/test_animal_data.csv"
 
 output_csv_file = "animals_with_descriptions.csv"
 
