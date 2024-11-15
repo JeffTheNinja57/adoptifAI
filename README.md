@@ -1,19 +1,23 @@
-# AdoptifAI - Animal Description Generator
+# AdoptifAI - Multilingual Animal Description Generator
 
 ## Project Overview
-This project automates the generation of engaging animal shelter descriptions using Google's Gemini AI. Let me walk you through it!
+This project automates the generation of engaging animal shelter descriptions using Google's Gemini AI and provides translations to Dutch using a pretrained model. Perfect for shelters serving multilingual communities!
 
 ## File Structure
 ```
 adoptifAI/
+├── content/
+│   ├── chunked_generation/
+│   │   ├── chunked_description_call.py       # Main processing script
+│   │   ├── chunked_description_generator.py  # Batch description generation
+│   │   └── description_text.py              # Text saving utilities
+│   ├── normal_generation/                   # Alternative processing methods
+│   ├── object_based/                       # Object-oriented implementation
+│   └── tests/                              # Test files
 ├── data/
-│   ├── animals.csv                    # Input file with animal data
-│   └── animals_with_descriptions.csv  # Output file with generated descriptions
-├── generating_content/
-│   ├── description_generator.py       # Core AI description generation logic
-│   ├── description_call.py           # Single animal processing
-│   └── chunked_description_call.py   # Batch processing for multiple animals
-└── gemini_key.txt                    # Your Gemini API key
+│   ├── animals.csv                         # Input file with animal data
+│   └── animals_with_descriptions.csv       # Output file with generated descriptions
+└── gemini_key.txt                         # Your Gemini API key
 ```
 
 ## Setup
@@ -22,7 +26,8 @@ adoptifAI/
 ```bash
 pip install google.generativeai
 pip install pandas
-pip install tenacity  # For retry logic
+pip install transformers  # For translation model
+pip install torch  # Required for transformers
 ```
 
 2. **API Key Setup**
@@ -45,84 +50,98 @@ dog,Bella,3,black,12,"friendly, energetic",excellent,True,families
 
 ## Running the Generator
 
+The main processing script is `chunked_description_call.py`:
 
-### Option 1: Single Animal Processing
-```python
-python description_call.py
-```
-
-### Option 2: Batch Processing (Recommended!)
 ```python
 python chunked_description_call.py
 ```
 
-The batch processor:
-- Processes animals in groups of 5 (configurable)
-- More efficient API usage
-- Better error handling
-- Preserves existing descriptions
+This will:
+1. Process animals in configurable batch sizes (default: 5)
+2. Generate English descriptions using Gemini AI
+3. Translate descriptions to Dutch
+4. Save both versions to the output CSV
 
 ## How It Works
 
-
-1. **Data Loading**
+1. **Data Processing Flow**
    ```
-   CSV File → Load Animals → Check Existing Descriptions
+   CSV Input → Batch Processing → English Generation → Dutch Translation → CSV Output
    ```
 
 2. **Batch Processing**
-   ```
-   Group Animals → Generate Descriptions → Save Results
-   [5 animals] → [AI Generation] → [CSV Update]
-   ```
+   - Animals are processed in groups for efficiency
+   - Existing descriptions are preserved
+   - Failed generations are handled gracefully
 
-3. **Description Generation**
-   ```
-   Animal Data → AI Prompt → Generated Description
-   ```
+3. **Translation Process**
+   - Uses a pretrained model for English to Dutch translation
+   - Maintains the engaging tone and key information
+   - Processes translations in batches for efficiency
 
 ## Configuration Options
 
-
 In `chunked_description_call.py`:
 ```python
-batch_size = 5  # Number of animals per batch
-start_row = None  # Optional: Start from specific row
-end_row = None   # Optional: End at specific row
+batch_size = 5       # Number of animals per batch
+start_row = None     # Optional: Start from specific row
+end_row = None       # Optional: End at specific row
 ```
 
 ## Error Handling
 
-
-The system:
-- Retries failed API calls
-- Logs errors in `logs/` directory
-- Continues processing even if some descriptions fail
-- Preserves successfully generated descriptions
+The system includes:
+- Automatic retries for failed API calls
+- Error logging in the `logs/` directory
+- Preservation of successful generations
+- Batch-level error recovery
 
 ## Generated Descriptions
 
 Example output:
 ```
+English:
 "Bella is a playful and affectionate 3-year-old black beauty who is looking 
 for her forever home. She's been with us for a while now, but her sweet 
 disposition and boundless energy make her a joy to have around..."
+
+Dutch:
+"Bella is een speelse en liefdevolle 3-jarige zwarte schoonheid die op zoek 
+is naar haar forever home. Ze is al een tijdje bij ons, maar haar lieve karakter 
+en grenzeloze energie maken haar een vreugde om in de buurt te hebben..."
 ```
 
 ## Tips for Best Results
 
-
 1. Keep batch sizes reasonable (5-10 animals)
-2. Verify your API key is working
-3. Check the logs if something goes wrong
+2. Verify your API key and model access
+3. Monitor translation quality
+4. Check the logs for any issues
+5. Consider memory usage when processing large batches
 
 ## Future Improvements
 
-- Improve error recovery
-- Add image generation
-- Enhanced description customization
+- Support for additional languages
+- Enhanced translation quality checks
+- Image generation integration
+- More customization options for descriptions
+- API endpoint for real-time generation
 
 ## Need Help?
 
+- Check the logs in the `logs/` directory
+- Ensure all dependencies are correctly installed
+- Verify your API key permissions
+- Monitor system resources during large batch processing
 
-Check the logs in the `logs/` directory for detailed error messages and processing information.
+## Contributing
+
+Feel free to:
+- Report issues
+- Suggest improvements
+- Submit pull requests
+- Request additional language support
+
+## License
+
+[Your license information here]
