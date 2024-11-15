@@ -1,7 +1,8 @@
 import csv
 import time
 
-from chunked_description_generator import generate_animal_descriptions_batch  # Notice we import the batch function!
+from chunked_description_generator import generate_animal_descriptions_batch
+from description_text import save_batch_descriptions
 
 
 def process_animals_in_batches(input_csv_file, output_csv_file, batch_size=5, start_row=None, end_row=None):

@@ -41,10 +41,10 @@ def generate_animal_descriptions_batch(animal_batch):
 
         combined_prompt = "\n\n".join(
             prompts) + "\n\nWrite a separate engaging, informative description for each animal listed above. Label each response with the row number."
-
+        print(combined_prompt)
         response = gemini_model.generate_content(
             generation_config=genai.types.GenerationConfig(
-                max_output_tokens=250 * len(animal_batch),  # Increased for batch
+                max_output_tokens=220 * len(animal_batch),
                 temperature=0.9,
             ),
             contents=combined_prompt,
@@ -54,33 +54,7 @@ def generate_animal_descriptions_batch(animal_batch):
         if not response.text:
             raise Exception("No response generated")
 
-        # Split the response into individual descriptions
-        descriptions = {}
-        current_row = None
-        current_text = []
-
-        for line in response.text.split('\n'):
-            # Look for row number markers
-            if line.strip().startswith('Animal') or line.strip().startswith('Row'):
-                # If we were building a previous description, save it
-                if current_row is not None and current_text:
-                    descriptions[current_row] = ' '.join(current_text).strip()
-                    current_text = []
-
-                # Extract row number from the current line
-                for animal in animal_batch:
-                    row_num = str(animal['row_num'])
-                    if row_num in line:
-                        current_row = int(row_num)
-                        break
-            elif line.strip() and current_row is not None:
-                current_text.append(line.strip())
-
-        # Don't forget the last description
-        if current_row is not None and current_text:
-            descriptions[current_row] = ' '.join(current_text).strip()
-
-        return descriptions
+        return response.text
 
     except Exception as e:
         logging.error(f"Error generating batch descriptions: {str(e)}")
