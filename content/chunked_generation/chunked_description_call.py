@@ -73,7 +73,7 @@ def process_animals_in_batches(input_csv_file, batch_size=5, parse_start=None, p
                     descriptions = generate_animal_descriptions_batch(current_batch, model)
 
                     # Save to file
-                    file_path = save_batch_descriptions(descriptions, batch_number)
+                    file_path = save_batch_descriptions(descriptions, batch_number, "content/full_data/all_descriptions.txt")
                     print(f"Saved descriptions to: {file_path}")
 
                     current_batch = []

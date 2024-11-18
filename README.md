@@ -121,9 +121,7 @@ en grenzeloze energie maken haar een vreugde om in de buurt te hebben..."
 
 ## Future Improvements
 
-- Support for additional languages
 - Enhanced translation quality checks
-- Image generation integration
 - More customization options for descriptions
 - API endpoint for real-time generation
 
@@ -141,7 +139,3 @@ Feel free to:
 - Suggest improvements
 - Submit pull requests
 - Request additional language support
-
-## License
-
-[Your license information here]

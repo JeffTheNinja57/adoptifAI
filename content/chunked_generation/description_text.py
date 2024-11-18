@@ -1,6 +1,6 @@
 import os
 
-def save_batch_descriptions(descriptions, batch_number, output_file="../full_data/all_descriptions.txt"):
+def save_batch_descriptions(descriptions, batch_number, output_file):
     """Save batch descriptions to a single text file, appending new batches."""
     try:
         # Create directory if it doesn't exist
