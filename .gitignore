@@ -5,3 +5,4 @@ gen
 gemini_key.txt
 petfinder*
 logs
+.env
