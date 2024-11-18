@@ -93,7 +93,7 @@ def process_animals_in_batches(input_csv_file, batch_size=5, parse_start=None, p
 
 
 if __name__ == "__main__":
-    input_csv_file = "../../../data/animals.csv"
+    input_csv_file = "../../data/animals.csv"
     batch_size = 25
 
     # Define processing range

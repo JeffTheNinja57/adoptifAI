@@ -19,7 +19,7 @@ logging.basicConfig(
 try:
     GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
 except KeyError:
-    with open(os.path.abspath("../../../gemini_key.txt"), "r") as file:
+    with open(os.path.abspath("../../gemini_key.txt"), "r") as file:
         GEMINI_API_KEY = file.read().strip()
 
 genai.configure(api_key=GEMINI_API_KEY)

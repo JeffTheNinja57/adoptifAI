@@ -26,7 +26,7 @@ dog,Rocky,4,black,5,energetic,good,False,active"""
 
     def test_load_animals_from_csv(self):
         """Test loading animals from CSV with different ranges."""
-        from app.content.chunked_generation.chunked_description_call import load_animals_from_csv
+        from content.chunked_generation.chunked_description_call import load_animals_from_csv
 
         # Test loading all animals
         animals = load_animals_from_csv(self.input_csv)
@@ -59,7 +59,7 @@ dog,Rocky,4,black,5,energetic,good,False,active"""
     @patch('chunked_description_call.initialize_gemini')
     def test_process_animals_in_batches(self, mock_init, mock_save, mock_generate):
         """Test complete batch processing workflow."""
-        from app.content.chunked_generation.chunked_description_call import process_animals_in_batches
+        from content.chunked_generation.chunked_description_call import process_animals_in_batches
 
         # Setup mocks
         mock_generate.return_value = "Test description"
@@ -101,7 +101,7 @@ dog,Rocky,4,black,5,energetic,good,False,active"""
     @patch('chunked_description_call.initialize_gemini')
     def test_process_animals_with_ranges(self, mock_init, mock_save, mock_generate):
         """Test batch processing with different ranges."""
-        from app.content.chunked_generation.chunked_description_call import process_animals_in_batches
+        from content.chunked_generation.chunked_description_call import process_animals_in_batches
 
         # Create a test-specific output file in our temp directory
         test_output_file = os.path.join(self.temp_dir, "test_descriptions.txt")

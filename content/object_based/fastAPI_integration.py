@@ -1,6 +1,9 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
+from description_generator import AnimalDescriptionGenerator
+
+
 class AnimalData(BaseModel):
     animal_type: str
     name: str
@@ -12,8 +15,11 @@ class AnimalData(BaseModel):
     vaccinated: bool
     target_audience: str
 
+
 app = FastAPI()
+
 generator = AnimalDescriptionGenerator()
+
 
 @app.post("/generate-description")
 async def generate_description(animal_data: AnimalData, variations: int = 1):
