@@ -1,18 +1,11 @@
 import logging
-import os
 
 import google.generativeai as genai
 
-
-def initialize_gemini():
+def initialize_gemini(api_key):
     """Initialize Gemini API and model."""
     try:
-        GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-        if not GEMINI_API_KEY:
-            with open("gemini_key.txt", "r") as file:
-                GEMINI_API_KEY = file.read().strip()
-
-        genai.configure(api_key=GEMINI_API_KEY)
+        genai.configure(api_key=api_key)
         return genai.GenerativeModel(
             "gemini-1.5-flash",
             system_instruction=(
@@ -26,11 +19,10 @@ def initialize_gemini():
         logging.error(f"Error initializing Gemini: {str(e)}")
         raise
 
-
-async def generate_description(animal):
+async def generate_description(animal, api_key):
     """Generate description for a single animal"""
     try:
-        model = initialize_gemini()
+        model = initialize_gemini(api_key)
 
         # Create prompt
         vaccinated_status = "Yes" if animal.vaccinated else "No"
