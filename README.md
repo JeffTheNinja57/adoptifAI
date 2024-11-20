@@ -1,141 +1,232 @@
-# AdoptifAI - Multilingual Animal Description Generator
+# AdoptifAI
 
-## Project Overview
-This project automates the generation of engaging animal shelter descriptions using Google's Gemini AI and provides translations to Dutch using a pretrained model. Perfect for shelters serving multilingual communities!
+AdoptifAI is a web application designed to assist animal shelters in managing their animals and increasing adoption rates. The platform allows shelters to add animal profiles, generate engaging descriptions using the Gemini AI API, and reach a wider audience. Guests can browse animals available for adoption, while shelters have access to advanced management features.
 
-## File Structure
-```
-adoptifAI/
-├── content/
-│   ├── chunked_generation/
-│   │   ├── chunked_description_call.py       # Main processing script
-│   │   ├── chunked_description_generator.py  # Batch description generation
-│   │   └── description_text.py              # Text saving utilities
-│   ├── normal_generation/                   # Alternative processing methods
-│   ├── object_based/                       # Object-oriented implementation
-│   └── tests/                              # Test files
-├── data/
-│   ├── animals.csv                         # Input file with animal data
-│   └── animals_with_descriptions.csv       # Output file with generated descriptions
-└── gemini_key.txt                         # Your Gemini API key
-```
+---
 
-## Setup
+## Table of Contents
+1. [Features](#features)
+2. [Technology Stack](#technology-stack)
+3. [Prerequisites](#prerequisites)
+4. [Installation](#installation)
+    - [Backend Setup](#backend-setup)
+    - [Frontend Setup](#frontend-setup)
+    - [Running with Docker Compose](#running-with-docker-compose)
+5. [Usage](#usage)
+    - [Accessing the Application](#accessing-the-application)
+    - [Registering as a Shelter](#registering-as-a-shelter)
+    - [Managing Animals](#managing-animals)
+    - [Generating Descriptions](#generating-descriptions)
+6. [Testing](#testing)
+7. [Contributing](#contributing)
+8. [License](#license)
+9. [Contact](#contact)
 
-1. **Prerequisites**
-```bash
-pip install google.generativeai
-pip install pandas
-pip install transformers  # For translation model
-pip install torch  # Required for transformers
-```
+---
 
-2. **API Key Setup**
-- Get a Gemini API key from Google
-- Either:
-  - Set it as environment variable: `GEMINI_API_KEY`
-  - Or place it in `gemini_key.txt` in the root directory
+## Features
+- **Shelter Registration and Authentication**: Secure registration and login for animal shelters.
+- **Animal Management**: Add, update, and delete animal profiles.
+- **Guest Access**: Visitors can browse animals available for adoption.
+- **Description Generation**: Generate engaging animal descriptions using the Gemini AI API.
+- **Bulk Upload**: Upload CSV files to add multiple animals at once.
+- **Responsive Frontend**: User-friendly interface built with React.
+- **API Documentation**: Interactive API docs available via Swagger UI.
 
-## Input Data Format
+---
 
-Your `animals.csv` should have these columns:
-```
-animal_type,name,age,color,months_in_shelter,behavior,health,vaccinated,target_audience
-```
+## Technology Stack
 
-Example:
-```csv
-dog,Bella,3,black,12,"friendly, energetic",excellent,True,families
-```
+**Backend**:
+- Python 3.12
+- FastAPI
+- SQLModel (with SQLAlchemy and Pydantic)
+- SQLite (for development; can be replaced with PostgreSQL or MySQL)
+- Uvicorn (ASGI server)
+- JWT Authentication
 
-## Running the Generator
+**Frontend**:
+- React
+- Axios
+- React Router DOM
+- React Toastify (for notifications)
 
-The main processing script is `chunked_description_call.py`:
+**AI Integration**:
+- Gemini AI API (for description generation)
 
-```python
-python chunked_description_call.py
-```
+**Deployment**:
+- Docker
+- Docker Compose
 
-This will:
-1. Process animals in configurable batch sizes (default: 5)
-2. Generate English descriptions using Gemini AI
-3. Translate descriptions to Dutch
-4. Save both versions to the output CSV
+---
 
-## How It Works
+## Prerequisites
+- **Python**: Version 3.12
+- **Node.js**: Version 18 or higher
+- **npm**: Version 8 or higher
+- **Docker** (optional, for containerization)
+- **Docker Compose** (optional, for running both services together)
+- **Gemini AI API Key**: Required for generating descriptions (you can sign up for an API key from the Gemini AI platform)
 
-1. **Data Processing Flow**
+---
+
+## Installation
+
+You can run the application either by setting up the backend and frontend separately or by using Docker Compose to run both services together.
+
+### Backend Setup
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/yourusername/adoptifai.git
+   cd adoptifai/backend
    ```
-   CSV Input → Batch Processing → English Generation → Dutch Translation → CSV Output
+2. **Create a Virtual Environment**:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows, use venv\Scripts\activate
+   ```
+3. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. **Create a .env File**:
+   In the backend directory, create a file named `.env` with the following content:
+   ```env
+   DATABASE_URL=sqlite:///./data/animals.db
+   GEMINI_API_KEY=your_gemini_api_key
+   ENVIRONMENT=development
+   ```
+   Replace `your_gemini_api_key` with your actual Gemini API key.
+
+6. **Run the Backend Server**:
+   ```bash
+   uvicorn app.main:app --reload
+   ```
+   The backend API will be available at [http://localhost:8000](http://localhost:8000).
+   API documentation is accessible at [http://localhost:8000/docs](http://localhost:8000/docs).
+
+### Frontend Setup
+1. **Navigate to the Frontend Directory**:
+   ```bash
+   cd ../frontend
+   ```
+2. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
+3. **Start the Frontend Development Server**:
+   ```bash
+   npm start
+   ```
+   The frontend application will be available at [http://localhost:3000](http://localhost:3000).
+
+---
+
+## Running with Docker Compose
+
+Alternatively, you can run both the backend and frontend using Docker Compose.
+
+1. **Ensure Docker and Docker Compose are Installed**.
+
+2. **Navigate to the Project Root**:
+   ```bash
+   cd ..
+   ```
+3. **Create a .env File**:
+   In the project root directory, create a `.env` file with the following content:
+   ```env
+   DATABASE_URL=sqlite:///data/animals.db
+   GEMINI_API_KEY=your_gemini_api_key
+   ENVIRONMENT=development
+   ```
+4. **Build and Start the Containers**:
+   ```bash
+   docker compose up --build
+   ```
+   The frontend will be available at [http://localhost:3000](http://localhost:3000).
+   The backend API will be available at [http://localhost:8000](http://localhost:8000).
+
+5. **Stopping the Containers**:
+   To stop the containers, press `Ctrl+C`. To remove them:
+   ```bash
+   docker-compose down
    ```
 
-2. **Batch Processing**
-   - Animals are processed in groups for efficiency
-   - Existing descriptions are preserved
-   - Failed generations are handled gracefully
+---
 
-3. **Translation Process**
-   - Uses a pretrained model for English to Dutch translation
-   - Maintains the engaging tone and key information
-   - Processes translations in batches for efficiency
+## Usage
 
-## Configuration Options
+### Accessing the Application
+- **Frontend**: Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
+- **Backend API**: API documentation is available at [http://localhost:8000/docs](http://localhost:8000/docs).
 
-In `chunked_description_call.py`:
-```python
-batch_size = 5       # Number of animals per batch
-start_row = None     # Optional: Start from specific row
-end_row = None       # Optional: End at specific row
-```
+### Registering as a Shelter
+1. **Navigate to the Registration Page**:
+   - Click on the "Register" link in the navigation bar.
+2. **Fill in the Registration Form**:
+   - **Shelter Name**: Enter the name of your shelter.
+   - **Location**: Provide the shelter's location.
+   - **Contact Email**: Enter a valid email address.
+   - **Password**: Create a secure password.
+   - **API Key**: Optionally, provide your Gemini AI API key.
+3. **Submit the Form**:
+   - Click on the "Register" button to create your account.
 
-## Error Handling
+### Managing Animals
+- **Add a New Animal**:
+  1. **Login**: Ensure you're logged in as a shelter.
+  2. **Navigate to "Add Animal"**: Click on the "Add Animal" link.
+  3. **Fill in the Animal Details**: Provide all required information.
+  4. **Submit**: Click "Add Animal" to save the animal profile.
 
-The system includes:
-- Automatic retries for failed API calls
-- Error logging in the `logs/` directory
-- Preservation of successful generations
-- Batch-level error recovery
+- **Update an Animal**:
+  1. **Navigate to the Animal's Detail Page**.
+  2. **Click on "Update Animal"**.
+  3. **Modify the Details**.
+  4. **Submit**: Click "Update Animal" to save changes.
 
-## Generated Descriptions
+- **Delete an Animal**:
+  1. **Navigate to the Animal's Detail Page**.
+  2. **Click on "Delete Animal"**.
+  3. **Confirm Deletion**.
 
-Example output:
-```
-English:
-"Bella is a playful and affectionate 3-year-old black beauty who is looking 
-for her forever home. She's been with us for a while now, but her sweet 
-disposition and boundless energy make her a joy to have around..."
+- **Upload Animals via CSV**:
+  1. **Navigate to "Upload CSV"**.
+  2. **Select Your CSV File**: Ensure it follows the required format.
+  3. **Submit**: Click "Upload" to process the file.
 
-Dutch:
-"Bella is een speelse en liefdevolle 3-jarige zwarte schoonheid die op zoek 
-is naar haar forever home. Ze is al een tijdje bij ons, maar haar lieve karakter 
-en grenzeloze energie maken haar een vreugde om in de buurt te hebben..."
-```
+### Generating Descriptions
+- **Generate Description for a Single Animal**:
+  1. **Navigate to the Animal's Detail Page**.
+  2. **Click on "Generate Description"**.
+  3. **Wait for Confirmation**: The description will be generated and saved.
 
-## Tips for Best Results
+- **Generate Descriptions in Batch**:
+  - This feature can be accessed via the backend API or implemented in the frontend as needed.
 
-1. Keep batch sizes reasonable (5-10 animals)
-2. Verify your API key and model access
-3. Monitor translation quality
-4. Check the logs for any issues
-5. Consider memory usage when processing large batches
+---
 
-## Future Improvements
+## Testing
 
-- Enhanced translation quality checks
-- More customization options for descriptions
-- API endpoint for real-time generation
+- **Backend Tests**:
+  - Tests are written using `pytest` and can be run with:
+    ```bash
+    pytest
+    ```
+- **Frontend Tests**:
+  - Tests are written using Jest and React Testing Library.
+    ```bash
+    npm test
+    ```
 
-## Need Help?
+---
 
-- Check the logs in the `logs/` directory
-- Ensure all dependencies are correctly installed
-- Verify your API key permissions
-- Monitor system resources during large batch processing
+## License
 
-## Contributing
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-Feel free to:
-- Report issues
-- Suggest improvements
-- Submit pull requests
-- Request additional language support
+---
+
+## Acknowledgments
+
+Special thanks to all teammates and the professor.
