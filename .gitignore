@@ -6,3 +6,5 @@ gemini_key.txt
 petfinder*
 logs
 .env
+#ignore node_modules
+node_modules
