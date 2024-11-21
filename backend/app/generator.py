@@ -1,6 +1,9 @@
 import logging
+import os
 
 import google.generativeai as genai
+from dotenv import load_dotenv
+
 
 def initialize_gemini(api_key):
     """Initialize Gemini API and model."""
@@ -18,6 +21,7 @@ def initialize_gemini(api_key):
     except Exception as e:
         logging.error(f"Error initializing Gemini: {str(e)}")
         raise
+
 
 async def generate_description(animal, api_key):
     """Generate description for a single animal"""

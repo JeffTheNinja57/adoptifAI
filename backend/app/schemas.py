@@ -18,6 +18,7 @@ class ShelterCreate(ShelterBase):
 
 class ShelterRead(ShelterBase):
     id: int
+    api_key: Optional[str] = None
 
     class Config:
         orm_mode = True

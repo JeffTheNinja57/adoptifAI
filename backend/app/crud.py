@@ -1,3 +1,6 @@
+import csv
+import io
+
 from sqlalchemy.orm import Session
 
 from . import models, schemas
@@ -65,12 +68,17 @@ def delete_animal(db: Session, db_animal: models.Animal):
 
 
 def create_animals_from_csv(db: Session, file, shelter_id: int):
-    import csv
-    reader = csv.DictReader(file)
+    text_file = io.TextIOWrapper(file, encoding='utf-8')
+    reader = csv.DictReader(text_file)
     animals_added = 0
     for row in reader:
         animal_data = schemas.AnimalCreate(**row)
-        animal_data.shelter_id = shelter_id
-        create_animal(db, animal_data)
+        # Ensure shelter_id is set
+        db_animal = models.Animal(
+            **animal_data.dict(),
+            shelter_id=shelter_id
+        )
+        db.add(db_animal)
         animals_added += 1
+    db.commit()
     return animals_added

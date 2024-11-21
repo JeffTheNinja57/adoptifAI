@@ -1,4 +1,5 @@
 from typing import List
+
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
 from sqlalchemy.orm import Session
 
@@ -7,6 +8,29 @@ from ..crud import create_animals_from_csv
 from ..database import get_session
 
 router = APIRouter()
+
+
+@router.get("/my-animals", response_model=List[schemas.AnimalRead])
+def get_my_animals(
+        current_shelter: models.Shelter = Depends(dependencies.get_current_shelter),
+        db: Session = Depends(get_session)
+):
+    animals = db.query(models.Animal).filter(
+        models.Animal.shelter_id == current_shelter.id
+    ).all()
+    return animals
+
+
+@router.post("/upload-csv")
+def upload_csv(
+    file: UploadFile = File(...),
+    current_shelter: models.Shelter = Depends(dependencies.get_current_shelter),
+    db: Session = Depends(get_session)
+):
+    if file.content_type != 'text/csv':
+        raise HTTPException(status_code=400, detail="Invalid file type")
+    animals_added = create_animals_from_csv(db, file.file, current_shelter.id)
+    return {"detail": f"{animals_added} animals added successfully"}
 
 
 @router.get("/", response_model=List[schemas.AnimalRead])
@@ -25,9 +49,9 @@ def read_animal(animal_id: int, db: Session = Depends(get_session)):
 
 @router.post("/", response_model=schemas.AnimalRead)
 def create_new_animal(
-    animal: schemas.AnimalCreate,
-    current_shelter: models.Shelter = Depends(dependencies.get_current_shelter),
-    db: Session = Depends(get_session)
+        animal: schemas.AnimalCreate,
+        current_shelter: models.Shelter = Depends(dependencies.get_current_shelter),
+        db: Session = Depends(get_session)
 ):
     new_animal = models.Animal(
         **animal.dict(),
@@ -41,10 +65,10 @@ def create_new_animal(
 
 @router.put("/{animal_id}", response_model=schemas.AnimalRead)
 def update_existing_animal(
-    animal_id: int,
-    animal: schemas.AnimalUpdate,
-    current_shelter: models.Shelter = Depends(dependencies.get_current_shelter),
-    db: Session = Depends(get_session)
+        animal_id: int,
+        animal: schemas.AnimalUpdate,
+        current_shelter: models.Shelter = Depends(dependencies.get_current_shelter),
+        db: Session = Depends(get_session)
 ):
     db_animal = db.query(models.Animal).filter(
         models.Animal.id == animal_id,
@@ -62,9 +86,9 @@ def update_existing_animal(
 
 @router.delete("/{animal_id}")
 def delete_existing_animal(
-    animal_id: int,
-    current_shelter: models.Shelter = Depends(dependencies.get_current_shelter),
-    db: Session = Depends(get_session)
+        animal_id: int,
+        current_shelter: models.Shelter = Depends(dependencies.get_current_shelter),
+        db: Session = Depends(get_session)
 ):
     db_animal = db.query(models.Animal).filter(
         models.Animal.id == animal_id,
@@ -75,26 +99,3 @@ def delete_existing_animal(
     db.delete(db_animal)
     db.commit()
     return {"detail": "Animal deleted successfully"}
-
-
-@router.post("/upload-csv")
-def upload_csv(
-    file: UploadFile = File(...),
-    current_shelter: models.Shelter = Depends(dependencies.get_current_shelter),
-    db: Session = Depends(get_session)
-):
-    if file.content_type != 'text/csv':
-        raise HTTPException(status_code=400, detail="Invalid file type")
-    animals_added = create_animals_from_csv(db, file.file, current_shelter.id)
-    return {"detail": f"{animals_added} animals added successfully"}
-
-
-@router.get("/my-animals", response_model=List[schemas.AnimalRead])
-def get_my_animals(
-    current_shelter: models.Shelter = Depends(dependencies.get_current_shelter),
-    db: Session = Depends(get_session)
-):
-    animals = db.query(models.Animal).filter(
-        models.Animal.shelter_id == current_shelter.id
-    ).all()
-    return animals

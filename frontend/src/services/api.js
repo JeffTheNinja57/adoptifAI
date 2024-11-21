@@ -23,17 +23,19 @@ export const login = (credentials) =>
 export const register = (data) => api.post('/register', data).then((res) => res.data);
 
 // Shelter
-export const getShelterDetails = () => api.get('/shelter/me').then((res) => res.data);
-export const updateShelter = (data) => api.put('/shelter/me', data).then((res) => res.data);
-export const deleteShelter = () => api.delete('/shelter/me').then((res) => res.data);
+export const getShelterDetails = () =>
+  api.get('/shelters/me').then((res) => res.data);
+export const updateShelter = (data) =>
+  api.put('/shelters/me', data).then((res) => res.data);
+export const deleteShelter = () =>
+  api.delete('/shelters/me').then((res) => res.data);
 
 // Animals
 export const getAnimals = () => api.get('/animals/').then((res) => res.data);
 export const getAnimal = (id) => api.get(`/animals/${id}`).then((res) => res.data);
 export const getMyAnimals = () => api.get('/animals/my-animals').then((res) => res.data);
 export const addAnimal = (data) => api.post('/animals/', data).then((res) => res.data);
-export const updateAnimal = (id, data) =>
-  api.put(`/animals/${id}`, data).then((res) => res.data);
+export const updateAnimal = (id, data) => api.put(`/animals/${id}`, data).then((res) => res.data);
 export const deleteAnimal = (id) => api.delete(`/animals/${id}`).then((res) => res.data);
 export const uploadCSV = (file) => {
   const formData = new FormData();
