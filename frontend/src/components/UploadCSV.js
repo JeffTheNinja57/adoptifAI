@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { uploadCSV } from '../services/api';
 import { toast } from 'react-toastify';
+import { Button, Input } from '@mui/material';
 
 function UploadCSV() {
   const [file, setFile] = useState(null);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleUpload = async () => {
     if (!file) {
       toast.error('Please select a CSV file');
       return;
@@ -20,17 +20,16 @@ function UploadCSV() {
   };
 
   return (
-    <div className="form-container">
+    <div className="upload-csv">
       <h2>Upload CSV</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="file"
-          accept=".csv"
-          onChange={(e) => setFile(e.target.files[0])}
-          required
-        />
-        <button type="submit">Upload</button>
-      </form>
+      <Input
+        type="file"
+        inputProps={{ accept: '.csv' }}
+        onChange={(e) => setFile(e.target.files[0])}
+      />
+      <Button variant="contained" color="primary" onClick={handleUpload}>
+        Upload
+      </Button>
     </div>
   );
 }

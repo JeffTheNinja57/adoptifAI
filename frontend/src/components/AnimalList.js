@@ -1,6 +1,9 @@
+// src/components/AnimalList.js
+
 import React, { useEffect, useState } from 'react';
 import { getAnimals } from '../services/api';
 import { Link } from 'react-router-dom';
+import { List, ListItem, ListItemText, Paper } from '@mui/material';
 
 function AnimalList() {
   const [animals, setAnimals] = useState([]);
@@ -20,15 +23,15 @@ function AnimalList() {
   return (
     <div>
       <h2>Available Animals</h2>
-      <ul className="animal-list">
-        {animals.map((animal) => (
-          <li key={animal.id}>
-            <Link to={`/animals/${animal.id}`}>
-              {animal.name} - {animal.animal_type}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <Paper>
+        <List>
+          {animals.map((animal) => (
+            <ListItem button component={Link} to={`/animals/${animal.id}`} key={animal.id}>
+              <ListItemText primary={`${animal.name} - ${animal.animal_type}`} />
+            </ListItem>
+          ))}
+        </List>
+      </Paper>
     </div>
   );
 }

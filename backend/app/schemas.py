@@ -1,6 +1,7 @@
-from typing import Optional, List
+from typing import Optional
 from pydantic import BaseModel, EmailStr
 from .models import AnimalType, HealthStatus
+
 
 # Shelter Schemas
 
@@ -9,9 +10,11 @@ class ShelterBase(BaseModel):
     location: str
     contact_email: EmailStr
 
+
 class ShelterCreate(ShelterBase):
     password: str
     api_key: Optional[str] = None
+
 
 class ShelterRead(ShelterBase):
     id: int
@@ -19,10 +22,16 @@ class ShelterRead(ShelterBase):
     class Config:
         orm_mode = True
 
+
+class ApiKeySchema(BaseModel):
+    api_key: str
+
+
 class ShelterUpdate(BaseModel):
     name: Optional[str] = None
     location: Optional[str] = None
     api_key: Optional[str] = None
+
 
 # Animal Schemas
 
@@ -37,17 +46,20 @@ class AnimalBase(BaseModel):
     vaccinated: bool = False
     target_audience: str
 
+
 class AnimalCreate(AnimalBase):
     pass
 
+
 class AnimalRead(AnimalBase):
     id: int
-    shelter_id: Optional[int] = None
+    shelter_id: int
     description_en: Optional[str] = None
     description_nl: Optional[str] = None
 
     class Config:
         orm_mode = True
+
 
 class AnimalUpdate(BaseModel):
     name: Optional[str] = None
@@ -62,11 +74,9 @@ class AnimalUpdate(BaseModel):
     description_en: Optional[str] = None
     description_nl: Optional[str] = None
 
+
 # Auth Schemas
 
 class LoginSchema(BaseModel):
     contact_email: EmailStr
     password: str
-
-class ApiKeySchema(BaseModel):
-    api_key: str

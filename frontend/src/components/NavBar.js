@@ -1,4 +1,7 @@
+// src/components/Navbar.js
+
 import React from 'react';
+import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import { isAuthenticated, logout } from '../utils/auth';
 
@@ -11,24 +14,37 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar">
-      <Link to="/">AdoptifAI</Link>
-      <div>
-        <Link to="/animals">Animals</Link>
+    <AppBar position="static" sx={{ backgroundColor: '#2A3663' }}>
+      <Toolbar>
+        <Typography
+          variant="h6"
+          component={Link}
+          to="/"
+          sx={{ flexGrow: 1, textDecoration: 'none', color: 'inherit' }}
+        >
+          Adopt-if-AI
+        </Typography>
         {isAuthenticated() ? (
           <>
-            <Link to="/add-animal">Add Animal</Link>
-            <Link to="/upload-csv">Upload CSV</Link>
-            <button onClick={handleLogout}>Logout</button>
+            <Button color="inherit" component={Link} to="/account">
+              Account
+            </Button>
+            <Button color="inherit" onClick={handleLogout}>
+              Logout
+            </Button>
           </>
         ) : (
           <>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
+            <Button color="inherit" component={Link} to="/login">
+              Login
+            </Button>
+            <Button color="inherit" component={Link} to="/register">
+              Register
+            </Button>
           </>
         )}
-      </div>
-    </nav>
+      </Toolbar>
+    </AppBar>
   );
 }
 

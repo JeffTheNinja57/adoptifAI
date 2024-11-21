@@ -1,7 +1,10 @@
+// src/components/Register.js
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { register } from '../services/api';
 import { toast } from 'react-toastify';
+import { TextField, Button, Paper, Typography } from '@mui/material';
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -25,46 +28,57 @@ function Register() {
   };
 
   return (
-    <div className="form-container">
-      <h2>Shelter Registration</h2>
+    <Paper className="form-container" style={{ padding: '2rem', marginTop: '2rem' }}>
+      <Typography variant="h5" gutterBottom>
+        Shelter Registration
+      </Typography>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Shelter Name"
+        <TextField
+          label="Shelter Name"
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           required
+          fullWidth
+          margin="normal"
         />
-        <input
-          type="text"
-          placeholder="Location"
+        <TextField
+          label="Location"
           value={formData.location}
           onChange={(e) => setFormData({ ...formData, location: e.target.value })}
           required
+          fullWidth
+          margin="normal"
         />
-        <input
+        <TextField
+          label="Contact Email"
           type="email"
-          placeholder="Contact Email"
           value={formData.contact_email}
           onChange={(e) => setFormData({ ...formData, contact_email: e.target.value })}
           required
+          fullWidth
+          margin="normal"
         />
-        <input
+        <TextField
+          label="Password"
           type="password"
-          placeholder="Password"
           value={formData.password}
           onChange={(e) => setFormData({ ...formData, password: e.target.value })}
           required
+          fullWidth
+          margin="normal"
         />
-        <input
-          type="text"
-          placeholder="API Key (optional)"
+        <TextField
+          label="API Key (optional)"
           value={formData.api_key}
           onChange={(e) => setFormData({ ...formData, api_key: e.target.value })}
+          fullWidth
+          margin="normal"
         />
-        <button type="submit">Register</button>
+        <Button variant="contained" color="primary" type="submit" fullWidth style={{ marginTop: '1rem' }}>
+          Register
+        </Button>
       </form>
-    </div>
+    </Paper>
   );
 }
 
