@@ -2,9 +2,9 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from passlib.context import CryptContext
 
-from backend.app import models, schemas, dependencies
-from backend.app.database import get_session
-from backend.app.crud import get_shelter_by_email, create_shelter
+from .. import models, schemas, dependencies
+from ..database import get_session
+from ..crud import get_shelter_by_email, create_shelter
 
 router = APIRouter()
 

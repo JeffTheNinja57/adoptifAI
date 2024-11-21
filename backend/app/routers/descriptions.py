@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from backend.app import models, dependencies
-from backend.app.database import get_session
-from backend.app.generator import generate_description
-from backend.app.chunked import generate_descriptions_batch
+from .. import models, dependencies
+from ..database import get_session
+from ..generator import generate_description
+from ..chunked import generate_descriptions_batch
 
 router = APIRouter()
 

@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from backend.app.routers import auth, animals, shelters, descriptions
+from . import auth, animals, shelters, descriptions
 
 api_router = APIRouter()
 

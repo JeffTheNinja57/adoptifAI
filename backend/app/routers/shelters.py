@@ -1,6 +1,6 @@
-from backend.app import models, schemas, dependencies
-from backend.app.crud import update_shelter
-from backend.app.database import get_session
+from .. import models, schemas, dependencies
+from ..crud import update_shelter
+from ..database import get_session
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 

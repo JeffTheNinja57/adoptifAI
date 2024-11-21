@@ -6,8 +6,8 @@ from jose import JWTError, jwt
 from sqlalchemy.orm import Session
 from fastapi.security import OAuth2PasswordBearer
 
-from backend.app import models
-from backend.app.database import get_session
+from . import models
+from .database import get_session
 
 # Secret key for JWT
 SECRET_KEY = "your_secret_key"  # Replace with a secure secret key

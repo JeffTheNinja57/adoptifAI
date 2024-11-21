@@ -1,6 +1,6 @@
 import logging
 
-from backend.app.generator import initialize_gemini
+from .generator import initialize_gemini
 
 async def generate_descriptions_batch(db_session, animals, api_key, batch_size=5):
     """Generate descriptions for multiple animals in batches"""

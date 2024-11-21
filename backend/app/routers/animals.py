@@ -2,9 +2,9 @@ from typing import List, Optional
 from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File
 from sqlalchemy.orm import Session
 
-from backend.app import models, schemas, dependencies
-from backend.app.database import get_session
-from backend.app.crud import (
+from .. import models, schemas, dependencies
+from ..database import get_session
+from ..crud import (
     get_animal_by_id,
     get_animals,
     create_animal,

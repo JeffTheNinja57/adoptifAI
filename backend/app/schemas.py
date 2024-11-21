@@ -1,6 +1,6 @@
 from typing import Optional, List
 from pydantic import BaseModel, EmailStr
-from backend.app.models import AnimalType, HealthStatus
+from .models import AnimalType, HealthStatus
 
 # Shelter Schemas
 

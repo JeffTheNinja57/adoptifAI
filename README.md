@@ -18,7 +18,9 @@ AdoptifAI is a web application designed to assist animal shelters in managing th
     - [Managing Animals](#managing-animals)
     - [Generating Descriptions](#generating-descriptions)
 6. [Testing](#testing)
+7. [Contributing](#contributing)
 8. [License](#license)
+9. [Contact](#contact)
 
 ---
 
