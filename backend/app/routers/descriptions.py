@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.orm import Session
+from sqlmodel import Session, select
 
 from .. import models, dependencies
 from ..database import get_session
@@ -16,10 +16,7 @@ async def generate_animal_description(
 ):
     if not current_shelter.api_key:
         raise HTTPException(status_code=400, detail="API key not set")
-    animal = db.query(models.Animal).filter(
-        models.Animal.id == animal_id,
-        models.Animal.shelter_id == current_shelter.id
-    ).first()
+    animal = db.get(models.Animal, animal_id)
     if not animal:
         raise HTTPException(status_code=404, detail="Animal not found or unauthorized")
     # Pass the api_key to the generate_description function
@@ -34,7 +31,8 @@ async def generate_animal_description(
 async def generate_descriptions_for_all(current_shelter: models.Shelter = Depends(dependencies.get_current_shelter), db: Session = Depends(get_session)):
     if not current_shelter.api_key:
         raise HTTPException(status_code=400, detail="API key not set")
-    animals = db.query(models.Animal).filter(models.Animal.shelter_id == current_shelter.id).all()
+    stmt = select(models.Animal).where(models.Animal.shelter_id == current_shelter.id)
+    animals = db.exec(stmt).all()
     await generate_descriptions_batch(db, animals)
     return {"detail": "Descriptions generated successfully"}
 

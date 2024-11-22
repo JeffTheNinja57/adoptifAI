@@ -2,7 +2,7 @@ from .. import models, schemas, dependencies
 from ..crud import update_shelter
 from ..database import get_session
 from fastapi import APIRouter, Depends
-from sqlalchemy.orm import Session
+from sqlmodel import Session
 
 router = APIRouter()
 

@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
-from sqlalchemy.orm import Session
+from sqlmodel import Session, select
 
 from . import models
 from .database import get_session
@@ -44,7 +44,8 @@ def get_current_shelter(
             raise credentials_exception
     except JWTError:
         raise credentials_exception
-    shelter = db.query(models.Shelter).filter(models.Shelter.contact_email == email).first()
+    stmt = select(models.Shelter).where(models.Shelter.contact_email == email)
+    shelter = db.exec(stmt).first()
     if shelter is None:
         raise credentials_exception
     return shelter

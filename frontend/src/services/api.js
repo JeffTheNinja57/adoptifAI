@@ -47,6 +47,6 @@ export const uploadCSV = (file) => {
 
 // Descriptions
 export const generateDescription = (id) =>
-  api.post(`/animals/${id}/generate-description`).then((res) => res.data);
+  api.post(`/descriptions/animals/${id}/generate-description`).then((res) => res.data);
 export const generateTranslation = (id) =>
-  api.post(`/animals/${id}/generate-translation`).then((res) => res.data);
+  api.post(`/descriptions/animals/${id}/generate-translation`).then((res) => res.data);
