@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, status
-from sqlalchemy.orm import Session
+from sqlmodel import Session
 from passlib.context import CryptContext
 from fastapi.security import OAuth2PasswordRequestForm
 

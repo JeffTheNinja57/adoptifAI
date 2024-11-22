@@ -1,7 +1,7 @@
 import csv
 import io
 
-from sqlalchemy.orm import Session
+from sqlmodel import Session, select
 
 from . import models, schemas
 
@@ -9,7 +9,8 @@ from . import models, schemas
 # Shelter CRUD
 
 def get_shelter_by_email(db: Session, email: str):
-    return db.query(models.Shelter).filter(models.Shelter.contact_email == email).first()
+    statement = select(models.Shelter).where(models.Shelter.contact_email == email)
+    return db.exec(statement).first()
 
 
 def create_shelter(db: Session, shelter: schemas.ShelterCreate):
@@ -38,11 +39,11 @@ def update_shelter(db: Session, db_shelter: models.Shelter, shelter_update: sche
 # Animal CRUD
 
 def get_animal_by_id(db: Session, animal_id: int):
-    return db.query(models.Animal).filter(models.Animal.id == animal_id).first()
+    return db.get(models.Animal, animal_id)
 
 
 def get_animals(db: Session, skip: int = 0, limit: int = 100):
-    return db.query(models.Animal).offset(skip).limit(limit).all()
+    return db.exec(select(models.Animal).offset(skip).limit(limit)).all()
 
 
 def create_animal(db: Session, animal: schemas.AnimalCreate):

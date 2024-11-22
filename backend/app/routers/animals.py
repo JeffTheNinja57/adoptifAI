@@ -1,7 +1,7 @@
-from typing import List
+from typing import List, Union
 
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
-from sqlalchemy.orm import Session
+from sqlmodel import Session, select
 
 from .. import models, schemas, dependencies
 from ..crud import create_animals_from_csv
@@ -15,9 +15,8 @@ def get_my_animals(
         current_shelter: models.Shelter = Depends(dependencies.get_current_shelter),
         db: Session = Depends(get_session)
 ):
-    animals = db.query(models.Animal).filter(
-        models.Animal.shelter_id == current_shelter.id
-    ).all()
+    statement = select(models.Animal).where(models.Animal.shelter_id == current_shelter.id)
+    animals = db.exec(statement).all()
     return animals
 
 
@@ -35,13 +34,13 @@ def upload_csv(
 
 @router.get("/", response_model=List[schemas.AnimalRead])
 def read_animals(skip: int = 0, limit: int = 100, db: Session = Depends(get_session)):
-    animals = db.query(models.Animal).offset(skip).limit(limit).all()
+    animals = db.exec(select(models.Animal).offset(skip).limit(limit)).all()
     return animals
 
 
 @router.get("/{animal_id}", response_model=schemas.AnimalRead)
 def read_animal(animal_id: int, db: Session = Depends(get_session)):
-    animal = db.query(models.Animal).filter(models.Animal.id == animal_id).first()
+    animal = db.get(models.Animal, animal_id)
     if not animal:
         raise HTTPException(status_code=404, detail="Animal not found")
     return animal
@@ -54,7 +53,7 @@ def create_new_animal(
         db: Session = Depends(get_session)
 ):
     new_animal = models.Animal(
-        **animal.dict(),
+        **animal.model_dump(),
         shelter_id=current_shelter.id  # Assign shelter_id here
     )
     db.add(new_animal)
@@ -70,10 +69,7 @@ def update_existing_animal(
         current_shelter: models.Shelter = Depends(dependencies.get_current_shelter),
         db: Session = Depends(get_session)
 ):
-    db_animal = db.query(models.Animal).filter(
-        models.Animal.id == animal_id,
-        models.Animal.shelter_id == current_shelter.id
-    ).first()
+    db_animal = db.get(models.Animal, animal_id)
     if not db_animal:
         raise HTTPException(status_code=404, detail="Animal not found or unauthorized")
     for key, value in animal.dict(exclude_unset=True).items():
@@ -90,10 +86,7 @@ def delete_existing_animal(
         current_shelter: models.Shelter = Depends(dependencies.get_current_shelter),
         db: Session = Depends(get_session)
 ):
-    db_animal = db.query(models.Animal).filter(
-        models.Animal.id == animal_id,
-        models.Animal.shelter_id == current_shelter.id
-    ).first()
+    db_animal = db.get(models.Animal, animal_id)
     if not db_animal:
         raise HTTPException(status_code=404, detail="Animal not found or unauthorized")
     db.delete(db_animal)
