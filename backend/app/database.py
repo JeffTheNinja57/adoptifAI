@@ -1,7 +1,7 @@
 import os
 from sqlmodel import SQLModel, create_engine, Session
 
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///data/animals.db")
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///backend/data/animals.db")
 
 engine = create_engine(DATABASE_URL, echo=True)
 
