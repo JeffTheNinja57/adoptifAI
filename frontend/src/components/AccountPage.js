@@ -8,11 +8,14 @@ import {
     getMyAnimals,
     getShelterDetails,
     updateShelter,
+    generateTranslation
 } from '../services/api';
 import {useNavigate} from 'react-router-dom';
 import {isAuthenticated, logout} from '../utils/auth';
 import {toast} from 'react-toastify';
 import {Button, Paper, Table, TableBody, TableCell, TableHead, TableRow, TextField, Typography,} from '@mui/material';
+import GenerateDescription from "./GenerateDescription";
+import GenerateTranslation from "./GenerateTranslation";
 
 function AccountPage() {
     const [shelter, setShelter] = useState(null);
@@ -103,7 +106,9 @@ function AccountPage() {
             case 'generateDescription':
                 handleGenerateDescription(selectedAnimal.id);
                 break;
-            // Additional actions can be added here
+            case 'generateTranslation':
+                handleGenerateTranslation(selectedAnimal.id);
+                break;
             default:
                 break;
         }
@@ -124,7 +129,7 @@ function AccountPage() {
 
     const handleGenerateDescription = async (animalId) => {
         try {
-            await generateDescription(animalId);
+            await GenerateDescription(animalId);
             toast.success('Description generated successfully');
             fetchMyAnimals();
         } catch (error) {
@@ -251,6 +256,14 @@ function AccountPage() {
                             style={{marginLeft: '1rem'}}
                         >
                             Generate Description
+                        </Button>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            onClick={() => handleAnimalAction('generateTranslation')}
+                            style={{marginLeft: '1rem'}}
+                        >
+                            Generate Translation
                         </Button>
                         {/* Add other buttons like Generate Translation, Mark as Adopted */}
                     </div>

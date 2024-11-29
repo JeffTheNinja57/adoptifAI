@@ -10,9 +10,9 @@ router = APIRouter()
 
 @router.post("/animals/{animal_id}/generate-description")
 async def generate_animal_description(
-    animal_id: int,
-    current_shelter: models.Shelter = Depends(dependencies.get_current_shelter),
-    db: Session = Depends(get_session)
+        animal_id: int,
+        current_shelter: models.Shelter = Depends(dependencies.get_current_shelter),
+        db: Session = Depends(get_session)
 ):
     if not current_shelter.api_key:
         raise HTTPException(status_code=400, detail="API key not set")
@@ -28,12 +28,12 @@ async def generate_animal_description(
     return {"description": description}
 
 @router.post("/animals/generate-descriptions-batch")
-async def generate_descriptions_for_all(current_shelter: models.Shelter = Depends(dependencies.get_current_shelter), db: Session = Depends(get_session)):
+async def generate_descriptions_for_all(
+        current_shelter: models.Shelter = Depends(dependencies.get_current_shelter),
+        db: Session = Depends(get_session)):
     if not current_shelter.api_key:
         raise HTTPException(status_code=400, detail="API key not set")
     stmt = select(models.Animal).where(models.Animal.shelter_id == current_shelter.id)
     animals = db.exec(stmt).all()
     await generate_descriptions_batch(db, animals)
     return {"detail": "Descriptions generated successfully"}
-
-# For translations, you need to implement the translation function (not provided)

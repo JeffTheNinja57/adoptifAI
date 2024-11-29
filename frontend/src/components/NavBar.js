@@ -1,5 +1,3 @@
-// src/components/Navbar.js
-
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
@@ -14,7 +12,7 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#2A3663' }}>
+    <AppBar position="static" sx={{ backgroundColor: '#C57937' }}>
       <Toolbar>
         <Typography
           variant="h6"

@@ -1,9 +1,10 @@
-/* src/styles/styles.css */
-
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #FAF6E3; /* Light beige */
+  font-family: 'Helvetica', Arial, Helvetica, sans-serif, monospace, sans-serif;
+  background-color: #ECDFCC;
+}
+.header {
+  color: #C57937;
 }
 
 .container {
@@ -16,8 +17,8 @@ body {
 }
 
 .footer {
-  background-color: #2A3663;
-  color: #fff;
+  background-color: #c57937;
+  /*color: #fff;*/
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;

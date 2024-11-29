@@ -1,24 +1,23 @@
-// src/theme.js
-
-import { createTheme } from '@mui/material/styles';
+import {createTheme} from '@mui/material/styles';
 
 const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#2A3663', // Dark blue
+    palette: {
+        primary: {
+            main: '#C0C78C',
+        },
+        secondary: {
+
+            main: '#A5B68D',
+        },
+        background: {
+            default: '#FCFAEE', // Light background
+            paper: '#A5B68D', // Muted green
+        },
+        text: {
+            primary: '#2D2D2D', // Dark color for contrast on 'paper' background
+            secondary: '#FCFAEE', // Light color for contrast on dark elements
+        },
     },
-    secondary: {
-      main: '#B59F78', // Brownish
-    },
-    background: {
-      default: '#FAF6E3', // Light beige
-      paper: '#D8DBBD', // Light greenish
-    },
-    text: {
-      primary: '#2A3663',
-      secondary: '#B59F78',
-    },
-  },
 });
 
 export default theme;
