@@ -17,18 +17,16 @@ AdoptifAI is a web application designed to assist animal shelters in managing th
     - [Registering as a Shelter](#registering-as-a-shelter)
     - [Managing Animals](#managing-animals)
     - [Generating Descriptions](#generating-descriptions)
-6. [Testing](#testing)
-7. [Contributing](#contributing)
-8. [License](#license)
-9. [Contact](#contact)
+6. [License](#license)
 
 ---
 
 ## Features
 - **Shelter Registration and Authentication**: Secure registration and login for animal shelters.
-- **Animal Management**: Add, update, and delete animal profiles.
+- **Animal Management**: Read, Add, Update, and Delete animal profiles.
 - **Guest Access**: Visitors can browse animals available for adoption.
 - **Description Generation**: Generate engaging animal descriptions using the Gemini AI API.
+- **Translation for Animals**: Generate translations of the descriptions with a click of a button.
 - **Bulk Upload**: Upload CSV files to add multiple animals at once.
 - **Responsive Frontend**: User-friendly interface built with React.
 - **API Documentation**: Interactive API docs available via Swagger UI.
@@ -40,8 +38,8 @@ AdoptifAI is a web application designed to assist animal shelters in managing th
 **Backend**:
 - Python 3.12
 - FastAPI
-- SQLModel (with SQLAlchemy and Pydantic)
-- SQLite (for development; can be replaced with PostgreSQL or MySQL)
+- SQLModel (with Pydantic)
+- SQLite (easy integration with FastAPI; can be replaced with PostgreSQL or MySQL)
 - Uvicorn (ASGI server)
 - JWT Authentication
 
@@ -53,6 +51,7 @@ AdoptifAI is a web application designed to assist animal shelters in managing th
 
 **AI Integration**:
 - Gemini AI API (for description generation)
+- 
 
 **Deployment**:
 - Docker
@@ -78,7 +77,6 @@ You can run the application either by setting up the backend and frontend separa
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/yourusername/adoptifai.git
-   cd adoptifai/backend
    ```
 2. **Create a Virtual Environment**:
    ```bash
@@ -87,7 +85,7 @@ You can run the application either by setting up the backend and frontend separa
    ```
 3. **Install Dependencies**:
    ```bash
-   pip install -r requirements.txt
+   pip install --no-cache-dir -r requirements.txt
    ```
 4. **Create a .env File**:
    In the backend directory, create a file named `.env` with the following content:
@@ -98,9 +96,13 @@ You can run the application either by setting up the backend and frontend separa
    ```
    Replace `your_gemini_api_key` with your actual Gemini API key.
 
-6. **Run the Backend Server**:
+5. **Run the Backend Server**:
+    ```bash
+    cd adoptifai/backend
+   ```
+   
    ```bash
-   uvicorn app.main:app --reload
+   uvicorn app.main:app #for development continue the uvicorn run script with "--reload"
    ```
    The backend API will be available at [http://localhost:8000](http://localhost:8000).
    API documentation is accessible at [http://localhost:8000/docs](http://localhost:8000/docs).
@@ -128,10 +130,8 @@ Alternatively, you can run both the backend and frontend using Docker Compose.
 
 1. **Ensure Docker and Docker Compose are Installed**.
 
-2. **Navigate to the Project Root**:
-   ```bash
-   cd ..
-   ```
+2. **Navigate to the Project Root**
+   
 3. **Create a .env File**:
    In the project root directory, create a `.env` file with the following content:
    ```env
@@ -147,7 +147,9 @@ Alternatively, you can run both the backend and frontend using Docker Compose.
    The backend API will be available at [http://localhost:8000](http://localhost:8000).
 
 5. **Stopping the Containers**:
-   To stop the containers, press `Ctrl+C`. To remove them:
+   To stop the containers, press `Ctrl+C`.
+
+6. **To remove them:**
    ```bash
    docker-compose down
    ```
@@ -157,7 +159,7 @@ Alternatively, you can run both the backend and frontend using Docker Compose.
 ## Usage
 
 ### Accessing the Application
-- **Frontend**: Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
+- **Frontend** (a.k.a. The Website): Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
 - **Backend API**: API documentation is available at [http://localhost:8000/docs](http://localhost:8000/docs).
 
 ### Registering as a Shelter
@@ -174,50 +176,47 @@ Alternatively, you can run both the backend and frontend using Docker Compose.
 
 ### Managing Animals
 - **Add a New Animal**:
-  1. **Login**: Ensure you're logged in as a shelter.
+  1. **Login**: Ensure you're logged in as a shelter. If you just registered, you don't need to log in again.
   2. **Navigate to "Add Animal"**: Click on the "Add Animal" link.
   3. **Fill in the Animal Details**: Provide all required information.
   4. **Submit**: Click "Add Animal" to save the animal profile.
 
 - **Update an Animal**:
-  1. **Navigate to the Animal's Detail Page**.
-  2. **Click on "Update Animal"**.
-  3. **Modify the Details**.
-  4. **Submit**: Click "Update Animal" to save changes.
+  1. **Navigate to the Shelter Account Page**.
+  2. **Click on the desired Animal**: Will take you to the Animal's Detail Page.
+  3. **Click on "Update Animal"**.
+  4. **Modify the Details**.
+  5. **Submit**: Click "Update Animal" to save changes.
 
 - **Delete an Animal**:
-  1. **Navigate to the Animal's Detail Page**.
-  2. **Click on "Delete Animal"**.
-  3. **Confirm Deletion**.
+  1. **Navigate to the Shelter Account Page**.
+  2. **Click on the desired Animal**: Will take you to the Animal's Detail Page.
+  3. **Click on "Delete Animal"**.
+  4. **Confirm Deletion**.
 
 - **Upload Animals via CSV**:
-  1. **Navigate to "Upload CSV"**.
-  2. **Select Your CSV File**: Ensure it follows the required format.
-  3. **Submit**: Click "Upload" to process the file.
+  1. **Navigate to the Shelter Account Page**.
+  2. **Click on the desired Animal**: Will take you to the Animal's Detail Page.
+  3. **Navigate to "Upload CSV"**.
+  4. **Select Your CSV File**: Ensure it follows the required format:
+  ```bash
+  animal_type,name,age,color,months_in_shelter,behavior,health,vaccinated,target_audience
+  ```
+  5. **Submit**: Click "Upload" to process the file.
 
 ### Generating Descriptions
 - **Generate Description for a Single Animal**:
-  1. **Navigate to the Animal's Detail Page**.
-  2. **Click on "Generate Description"**.
-  3. **Wait for Confirmation**: The description will be generated and saved.
+  1. **Navigate to the Shelter Account Page**.
+  2. **Click on the desired Animal**.
+  3. **Click on "Generate Description"**.
+  4. **Wait for Confirmation**: The description will be generated and saved.
 
-- **Generate Descriptions in Batch**:
-  - This feature can be accessed via the backend API or implemented in the frontend as needed.
-
----
-
-## Testing
-
-- **Backend Tests**:
-  - Tests are written using `pytest` and can be run with:
-    ```bash
-    pytest
-    ```
-- **Frontend Tests**:
-  - Tests are written using Jest and React Testing Library.
-    ```bash
-    npm test
-    ```
+### Generating Translations
+- **Generate Translation for a Single Animal**:
+  1. **Navigate to the Shelter Account Page**.
+  2. **Click on the desired Animal**.
+  3. **Click on "Generate Translation"**.
+  4. **Wait for Confirmation**: The translation will be generated and saved.
 
 ---
 
