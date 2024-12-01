@@ -14,7 +14,7 @@ async def generate_translation(
     animal = db.get(models.Animal, animal_id)
     if not animal:
         raise HTTPException(status_code=404, detail="Animal not found or unauthorized")
-    translation = await translate.translation_function(animal.description_en)
+    translation = translate.translation_function(animal.description_en)
     if translation == "":
         raise HTTPException(status_code=404, detail="Translation function does not work yet")
     animal.description_nl = translation

@@ -1,7 +1,7 @@
 import torch
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-model = AutoModelForSeq2SeqLM.from_pretrained("../data")
+model = AutoModelForSeq2SeqLM.from_pretrained("C://Users//Simeon//Documents//GitHub//adoptifAI//backend//data//model")
 tokenizer = AutoTokenizer.from_pretrained('Helsinki-NLP/opus-mt-en-nl')
 
 
