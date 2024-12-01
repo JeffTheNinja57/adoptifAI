@@ -1,14 +1,12 @@
-// src/components/AccountPage.js
-
 import React, {useEffect, useState} from 'react';
 import {
     deleteAnimal,
     deleteShelter,
     generateDescription,
+    generateTranslation,
     getMyAnimals,
     getShelterDetails,
-    updateShelter,
-    generateTranslation
+    updateShelter
 } from '../services/api';
 import {useNavigate} from 'react-router-dom';
 import {isAuthenticated, logout} from '../utils/auth';
@@ -134,6 +132,16 @@ function AccountPage() {
             fetchMyAnimals();
         } catch (error) {
             toast.error('Failed to generate description');
+        }
+    };
+
+    const handleGenerateTranslation = async (animalId) => {
+        try {
+            await GenerateTranslation(animalId);
+            toast.success('Translation generated successfully');
+            fetchMyAnimals();
+        } catch (error) {
+            toast.error('Failed to generate translation');
         }
     };
 

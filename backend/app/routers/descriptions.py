@@ -8,6 +8,7 @@ from ..chunked import generate_descriptions_batch
 
 router = APIRouter()
 
+
 @router.post("/animals/{animal_id}/generate-description")
 async def generate_animal_description(
         animal_id: int,
@@ -26,6 +27,7 @@ async def generate_animal_description(
     db.commit()
     db.refresh(animal)
     return {"description": description}
+
 
 @router.post("/animals/generate-descriptions-batch")
 async def generate_descriptions_for_all(
