@@ -51,7 +51,7 @@ AdoptifAI is a web application designed to assist animal shelters in managing th
 
 **AI Integration**:
 - Gemini AI API (for description generation)
-- 
+- Fine-tuned HuggingFace model
 
 **Deployment**:
 - Docker
@@ -66,6 +66,7 @@ AdoptifAI is a web application designed to assist animal shelters in managing th
 - **Docker** (optional, for containerization)
 - **Docker Compose** (optional, for running both services together)
 - **Gemini AI API Key**: Required for generating descriptions (you can sign up for an API key from the Gemini AI platform)
+- **Sentencepiece**: Required for running the HuggingFace translation model
 
 ---
 
@@ -127,6 +128,7 @@ You can run the application either by setting up the backend and frontend separa
 ## Running with Docker Compose
 
 Alternatively, you can run both the backend and frontend using Docker Compose.
+THIS IS CURRENTLY NOT OPERATIONAL. IT WILL BE IMPLEMENTED IN THE FUTURE!
 
 1. **Ensure Docker and Docker Compose are Installed**.
 
@@ -170,7 +172,7 @@ Alternatively, you can run both the backend and frontend using Docker Compose.
    - **Location**: Provide the shelter's location.
    - **Contact Email**: Enter a valid email address.
    - **Password**: Create a secure password.
-   - **API Key**: Optionally, provide your Gemini AI API key.
+   - **API Key**: Provide your Gemini AI API key.
 3. **Submit the Form**:
    - Click on the "Register" button to create your account.
 
