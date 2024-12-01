@@ -66,7 +66,7 @@ AdoptifAI is a web application designed to assist animal shelters in managing th
 - **Docker** (optional, for containerization)
 - **Docker Compose** (optional, for running both services together)
 - **Gemini AI API Key**: Required for generating descriptions (you can sign up for an API key from the Gemini AI platform)
-- **Sentencepiece**: Required for running the HuggingFace translation model
+- **sentencepiece**: Required for running the HuggingFace translation model
 
 ---
 
