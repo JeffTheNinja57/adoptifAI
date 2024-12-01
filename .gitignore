@@ -5,3 +5,5 @@ gen
 logs
 .env
 node_modules
+venv
+_pycache_
