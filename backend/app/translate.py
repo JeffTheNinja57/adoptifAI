@@ -7,6 +7,7 @@ tokenizer = AutoTokenizer.from_pretrained('Helsinki-NLP/opus-mt-en-nl')
 
 def translation_function(input_text):
     # return ""
+    #
     text = str(input_text)
     # Tokenize the input text
     inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True)
