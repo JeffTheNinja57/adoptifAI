@@ -18,7 +18,7 @@ function GenerateTranslation() {
   return (
     <div>
       <h2>Generate Translation</h2>
-      <button onClick={handleGenerate}>Generate</button>
+      <button onClick={handleGenerate}>Generate translation</button>
     </div>
   );
 }

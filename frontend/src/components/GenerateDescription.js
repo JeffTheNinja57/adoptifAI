@@ -18,7 +18,7 @@ function GenerateDescription() {
   return (
     <div>
       <h2>Generate Description</h2>
-      <button onClick={handleGenerate}>Generate</button>
+      <button onClick={handleGenerate}>Generate Description</button>
     </div>
   );
 }
