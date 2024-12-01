@@ -1,8 +1,11 @@
 import torch
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-# model = AutoModelForSeq2SeqLM.from_pretrained("../data")
-# tokenizer = AutoTokenizer.from_pretrained('Helsinki-NLP/opus-mt-en-nl')
+
+def initialize_model():
+    pass
+    # model = AutoModelForSeq2SeqLM.from_pretrained("../data")
+    # tokenizer = AutoTokenizer.from_pretrained('Helsinki-NLP/opus-mt-en-nl')
 
 
 def translation_function(input_text):

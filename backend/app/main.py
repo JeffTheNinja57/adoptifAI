@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from .database import create_db_and_tables
 from .routers import api_router
+from .translate import initialize_model
 
 app = FastAPI(title="AdoptifAI")
 
@@ -17,5 +18,7 @@ app.add_middleware(
 @app.on_event("startup")
 def on_startup():
     create_db_and_tables()
+    initialize_model()
+
 
 app.include_router(api_router)

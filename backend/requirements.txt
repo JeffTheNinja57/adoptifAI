@@ -11,3 +11,4 @@ python-dotenv
 email-validator
 transformers
 torch
+sentencepiece
